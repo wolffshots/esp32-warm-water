@@ -4,3 +4,9 @@
 [submodule "components/esp32-ds18b20"]
 	path = components/esp32-ds18b20
 	url = git@github.com:DavidAntliff/esp32-ds18b20.git
+[submodule "components/esp32-wifi"]
+	path = components/esp32-wifi
+	url = git@github.com:wolffshots/esp32-wifi.git
+[submodule "components/esp32-utility"]
+	path = components/esp32-utility
+	url = git@github.com:wolffshots/esp32-utility.git
