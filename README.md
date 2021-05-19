@@ -53,3 +53,14 @@ We will get back to you as soon as possible.
 
 # Helpful commands
 - ```git submodule update --remote --recursive``` - updates the checked out modules to the most recent commit to their main branch
+
+# Todo
+ 
+- [ ] implement general gpio (built in led)
+- [ ] implement owb
+- [ ] implement ds18b20
+- [ ] cleanup wifi component
+- [ ] cleanup readmes
+
+
+
