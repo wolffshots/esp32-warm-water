@@ -16,7 +16,9 @@
         "esp_spi_flash.h": "c",
         "sys.h": "c",
         "err.h": "c",
-        "nvs_flash.h": "c"
+        "nvs_flash.h": "c",
+        "*.inc": "c",
+        "task.h": "c"
     },
     "idf.flashType": "UART"
 }

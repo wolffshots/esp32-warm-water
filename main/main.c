@@ -15,7 +15,7 @@
 #ifdef CONFIG_ESP_ENABLE_WIFI_STA
 #include "wifi_sta.h"
 #endif
-#ifdef CONFIG_ESP_ENABLE_WIFI_SAP
+#ifdef CONFIG_ESP_ENABLE_WIFI_SOFTAP
 #include "wifi_sap.h"
 #endif
 #endif
@@ -24,8 +24,11 @@
 
 void app_main(void)
 {
-#ifdef CONFIG_ESP_ENABLE_WIFI
-    wifi_init();
+#if defined(CONFIG_ESP_ENABLE_WIFI) && defined(CONFIG_ESP_ENABLE_WIFI_STA)
+    wifi_init_sta();
+#endif
+#if defined(CONFIG_ESP_ENABLE_WIFI) && defined(CONFIG_ESP_ENABLE_WIFI_SOFTAP)
+    wifi_init_sap();
 #endif
     print_chip_info();
 
