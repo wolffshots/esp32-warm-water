@@ -1,4 +1,4 @@
-# Hello World Example
+# Warm Water in esp-idf
 
 Starts a FreeRTOS task to print "Hello World".
 
@@ -50,3 +50,6 @@ Please use the following feedback channels:
 * For a feature request or bug report, create a [GitHub issue](https://github.com/espressif/esp-idf/issues)
 
 We will get back to you as soon as possible.
+
+# Helpful commands
+- ```git submodule update --remote --recursive``` - updates the checked out modules to the most recent commit to their main branch
