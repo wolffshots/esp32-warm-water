@@ -3,6 +3,10 @@
 esp-idf implementation of temperature controlled relay to switch a heating element to maintain water in a specific temperature range. 
 A webserver is used to interface with the system and change the goal temperature, range from the goal and the relay state (forced on or off).
 
+employs wifi, onewire and a relay to control the temperature of a body of water for the purpose of film development primarily. other uses include cooking and general chemistry.
+
+the main motivation to do this project was to be able to better process c41 colour film.
+
 ## how to use project
 
 this project is built using the Visual Studio Code esp-idf plugin. 
@@ -69,3 +73,4 @@ the code in this project is licensed under the MIT license - see LICENSE for det
 - [x] cleanup readmes
 - [ ] spiffs!
 - [ ] webserver/url handling - https://github.com/espressif/esp-idf/tree/master/examples/protocols/http_server/file_serving
+- [ ] component unit testing - https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/unit-tests.html
