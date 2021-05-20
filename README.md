@@ -10,8 +10,11 @@ the main motivation to do this project was to be able to better process c41 colo
 ## how to use project
 
 this project is built using the Visual Studio Code esp-idf plugin. 
+
 configure it from command line using `idf.py` or by using the cog in the plugin. 
+
 once it is configured, select the correct port of your ESP32 module and build and upload to it.
+
 an explanation of the hardware setup will come at a later stage.
 
 ## dependencies
