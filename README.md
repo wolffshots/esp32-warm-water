@@ -55,10 +55,10 @@ the code in this project is licensed under the MIT license - see LICENSE for det
 
 ## acknowledgements
 
-a big thank you to [David Antliff](https://github.com/DavidAntliff/) for providing his fantastic onewire and ds18b20 libraries on github under the MIT license
-thanks to [Shirkybooi](https://github.com/ShirkyBooi) for pushing me to use esp-idf
-last but not least, thanks to [Grabt234](https://github.com/grabt234) for helping me get into this field
-"1-Wire" is a registered trademark of Maxim Integrated.
+- a big thank you to [David Antliff](https://github.com/DavidAntliff/) for providing his fantastic onewire and ds18b20 libraries on github under the MIT license
+- thanks to [Shirkybooi](https://github.com/ShirkyBooi) for pushing me to use esp-idf
+- last but not least, thanks to [Grabt234](https://github.com/grabt234) for helping me get into this field
+- "1-Wire" is a registered trademark of Maxim Integrated.
 
 # todo
  
