@@ -1,22 +1,22 @@
-# Warm Water in esp-idf
+# warm water in esp-idf
 
-ESP-IDF implementation of temperature controlled relay to switch a heating element to maintain water in a specific temperature range. 
+esp-idf implementation of temperature controlled relay to switch a heating element to maintain water in a specific temperature range. 
 A webserver is used to interface with the system and change the goal temperature, range from the goal and the relay state (forced on or off).
 
-## How to use project
+## how to use project
 
-This project is built using the Visual Studio Code ESP-IDF plugin. 
-Configure it from command line using `idf.py` or by using the cog in the plugin. 
-Once it is configured, select the correct port of your ESP32 module and build and upload to it.
-An explanation of the hardware setup will come at a later stage.
+this project is built using the Visual Studio Code esp-idf plugin. 
+configure it from command line using `idf.py` or by using the cog in the plugin. 
+once it is configured, select the correct port of your ESP32 module and build and upload to it.
+an explanation of the hardware setup will come at a later stage.
 
-## Example folder contents
+## folder contents
 
-The project **esp32-warm-water** contains one source file in C language [main.c](main/main.c). The file is located in folder [main](main).
+the project **esp32-warm-water** contains one source file in C language [main.c](main/main.c). the file is located in folder [main](main).
 
-ESP-IDF projects are build using CMake. The project build configuration is contained in `CMakeLists.txt` files that provide set of directives and instructions describing the project's source files and targets (executable, library, or both). 
+esp-idf projects are build using cmake. the project build configuration is contained in `CMakeLists.txt` files that provide set of directives and instructions describing the project's source files and targets (executable, library, or both). 
 
-Below is short explanation of remaining files in the project folder.
+below is short explanation of remaining files in the project folder.
 
 ```
 ├── components                  the extra components employed in this project
@@ -37,19 +37,19 @@ Below is short explanation of remaining files in the project folder.
 └── README.md                   this file
 ```
 
-For more information on structure and contents of ESP-IDF projects, please refer to Section [Build System](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/build-system.html) of the ESP-IDF Programming Guide.
+for more information on structure and contents of esp-idf projects, please refer to Section [Build System](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/build-system.html) of the esp-idf programming guide.
 
-## Troubleshooting
+## troubleshooting
 
-* Program upload failure
+* program upload failure
 
-    * Hardware connection is not correct: run `idf.py -p PORT monitor`, and reboot your board to see if there are any output logs.
-    * The baud rate for downloading is too high: lower your baud rate in the `menuconfig` menu, and try again.
+    * hardware connection is not correct: run `idf.py -p PORT monitor`, and reboot your board to see if there are any output logs.
+    * the baud rate for downloading is too high: lower your baud rate in the `menuconfig` menu, and try again.
 
-# Helpful commands
+# helpful commands
 - ```git submodule update --remote --recursive``` - updates the checked out modules to the most recent commit to their main branch
 
-# Todo
+# todo
  
 - [ ] implement general gpio (built in led)
 - [ ] implement owb
