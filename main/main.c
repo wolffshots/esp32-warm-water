@@ -22,6 +22,7 @@
 #endif                               // CONFIG_ESP_ENABLE_WIFI_SOFTAP
 #endif                               // CONFIG_ESP_ENABLE_WIFI
 #include "utility.h"                 // used for printing chip info
+#include "ds18b20_wrapper.h"         // for setting up and interfacing with the temp sensor via owb
 
 /** main method that is run by default (similar to arduino style setup) */
 void app_main(void)
@@ -34,15 +35,9 @@ void app_main(void)
 #endif                                                                        // CONFIG_ESP_ENABLE_WIFI && CONFIG_ESP_ENABLE_WIFI_SOFTAP
     led_init();                                                               // setup led gpio pin
     print_chip_info();                                                        // print the chip features and details
+    ds18b20_init();                                                           //
+    ds18b20_read();                                                           //
     led_on();
-    printf("led on\n");
-    util_delay_seconds(1);
-    led_off();
-    printf("led off\n");
-    util_delay_seconds(1);
-    led_on();
-    printf("led on\n");
-    util_delay_seconds(1);
 
     fflush(stdout); // flush stdout stream
 }

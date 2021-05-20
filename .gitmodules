@@ -10,3 +10,6 @@
 [submodule "components/esp32-gpio"]
 	path = components/esp32-gpio
 	url = git@github.com:wolffshots/esp32-gpio.git
+[submodule "components/esp32-ds18b20-fork"]
+	path = components/esp32-ds18b20
+	url = git@github.com:wolffshots/esp32-ds18b20.git
