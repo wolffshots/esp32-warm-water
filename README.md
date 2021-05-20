@@ -62,10 +62,10 @@ the code in this project is licensed under the MIT license - see LICENSE for det
 
 # todo
  
-- [ ] implement general gpio (built in led)
+- [ ] implement general gpio (built in led) - https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/gpio.html
 - [ ] implement owb
-- [ ] implement ds18b20
-- [ ] cleanup wifi component
-- [ ] cleanup readmes
+- [ ] implement ds18b20 - https://github.com/DavidAntliff/esp32-ds18b20-example
+- [x] cleanup wifi component
+- [x] cleanup readmes
 - [ ] spiffs!
-- [ ] webserver/url handling
+- [ ] webserver/url handling - https://github.com/espressif/esp-idf/tree/master/examples/protocols/http_server/file_serving
