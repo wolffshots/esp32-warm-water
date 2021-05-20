@@ -35,7 +35,7 @@ below is short explanation of remaining files in the project folder.
 
 ```
 ├── components                  the extra components employed in this project
-|   ├── esp32-ds18b20           used to interface with the temperature sensor
+|   ├── esp32-ds18b20           used to interface with the temperature sensor (includes wrapper)
 |   ├── esp32-gpio              little gpio wrapper to simplify setup
 |   ├── esp32-owb               enables use of the one wire bus protocol
 |   ├── esp32-utility           some extra helper functions for debugging and qol
