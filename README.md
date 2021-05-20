@@ -66,7 +66,8 @@ the code in this project is licensed under the MIT license - see LICENSE for det
 
 # todo
  
-- [ ] implement general gpio (built in led) - https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/gpio.html
+- [ ] timer for temp reads
+- [x] implement general gpio (built in led) - https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/gpio.html
 - [ ] implement owb
 - [ ] implement ds18b20 - https://github.com/DavidAntliff/esp32-ds18b20-example
 - [x] cleanup wifi component

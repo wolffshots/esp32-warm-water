@@ -35,8 +35,8 @@ void app_main(void)
 #endif                                                                        // CONFIG_ESP_ENABLE_WIFI && CONFIG_ESP_ENABLE_WIFI_SOFTAP
     led_init();                                                               // setup led gpio pin
     print_chip_info();                                                        // print the chip features and details
-    ds18b20_init();                                                           //
-    ds18b20_read();                                                           //
+    ds18b20_wrapped_init();                                                   //
+    ds18b20_wrapped_read();                                                   //
     led_on();
 
     fflush(stdout); // flush stdout stream
