@@ -56,4 +56,5 @@ For more information on structure and contents of ESP-IDF projects, please refer
 - [ ] implement ds18b20
 - [ ] cleanup wifi component
 - [ ] cleanup readmes
-
+- [ ] spiffs!
+- [ ] webserver/url handling
