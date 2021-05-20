@@ -14,6 +14,14 @@ configure it from command line using `idf.py` or by using the cog in the plugin.
 once it is configured, select the correct port of your ESP32 module and build and upload to it.
 an explanation of the hardware setup will come at a later stage.
 
+## dependencies
+
+- [esp32-ds18b20](https://github.com/wolffshots/esp32-ds18b20)
+- [esp32-gpio](https://github.com/wolffshots/esp32-gpio)
+- [esp32-owb](https://github.com/DavidAntliff/esp32-owb)
+- [esp32-utility](https://github.com/wolffshots/esp32-utility)
+- [esp32-wifi](https://github.com/wolffshots/esp32-wifi)
+
 ## folder contents
 
 the project **esp32-warm-water** contains one source file in C language [main.c](main/main.c). the file is located in folder [main](main).
@@ -25,6 +33,7 @@ below is short explanation of remaining files in the project folder.
 ```
 ├── components                  the extra components employed in this project
 |   ├── esp32-ds18b20           used to interface with the temperature sensor
+|   ├── esp32-gpio              little gpio wrapper to simplify setup
 |   ├── esp32-owb               enables use of the one wire bus protocol
 |   ├── esp32-utility           some extra helper functions for debugging and qol
 |   └── esp32-wifi              some wrappers for the esp wifi functions
