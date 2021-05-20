@@ -39,6 +39,10 @@ below is short explanation of remaining files in the project folder.
 
 for more information on structure and contents of esp-idf projects, please refer to Section [Build System](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/build-system.html) of the esp-idf programming guide.
 
+## license
+
+the code in this project is licensed under the MIT license - see LICENSE for details.
+
 ## troubleshooting
 
 * program upload failure
@@ -48,6 +52,13 @@ for more information on structure and contents of esp-idf projects, please refer
 
 # helpful commands
 - ```git submodule update --remote --recursive``` - updates the checked out modules to the most recent commit to their main branch
+
+## acknowledgements
+
+a big thank you to [David Antliff](https://github.com/DavidAntliff/) for providing his fantastic onewire and ds18b20 libraries on github under the MIT license
+thanks to [Shirkybooi](https://github.com/ShirkyBooi) for pushing me to use esp-idf
+last but not least, thanks to [Grabt234](https://github.com/grabt234) for helping me get into this field
+"1-Wire" is a registered trademark of Maxim Integrated.
 
 # todo
  
