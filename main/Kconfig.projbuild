@@ -1,8 +1,8 @@
 # https://www.kernel.org/doc/html/latest/kbuild/kconfig-language.html
-menu "Logging Configuration"
-    config ESP_LOG
-        bool "Log or no log?"
-        default n
+menu "wolffshots/esp32-warm-water config"
+    config ESP_BUILTIN_LED
+        int "built in LED pin"
+        default 5
         help
-            Oh to log or not to log    
+            the pin of the LED built into the board if it has one (set to -1 otherwise)
 endmenu
