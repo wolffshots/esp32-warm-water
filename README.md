@@ -68,6 +68,7 @@ the code in this project is licensed under the MIT license - see LICENSE for det
 
 # helpful commands
 - ```git submodule update --remote --recursive``` - updates the checked out modules to the most recent commit to their main branch
+- ```git push all``` - as setup with ```https://jigarius.com/blog/multiple-git-remote-repositories```
 
 ## acknowledgements
 
