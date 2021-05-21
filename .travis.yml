@@ -5,7 +5,7 @@ dist: trusty
 # Blacklist
 branches:
   only:
-    - master
+    - main
 
 # Environment variables
 env:
@@ -34,6 +34,6 @@ deploy:
   local-dir: doc/html
   github-token: $TRAVIS_TOKEN
   on:
-    branch: master
+    branch: main
   target-branch: gh-pages
 
