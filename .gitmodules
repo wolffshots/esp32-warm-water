@@ -15,4 +15,4 @@
 	url = ../esp32-ds18b20.git
 [submodule "components/esp32-timer"]
 	path = components/esp32-timer
-	url = git@github.com:wolffshots/esp32-timer.git
+	url = ../esp32-timer.git
