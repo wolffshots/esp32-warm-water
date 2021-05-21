@@ -10,8 +10,17 @@
  */
 
 #include <stdio.h>     // esp packaged standard io library
+#include <stdbool.h>   // booleans
 #include "sdkconfig.h" // the generated configuration variables
 #include "led.h"       // led module
+
+/*
+    ESP_LOGE - error (lowest)
+    ESP_LOGW - warning
+    ESP_LOGI - info
+    ESP_LOGD - debug
+    ESP_LOGV - verbose (highest)
+*/
 
 #ifdef CONFIG_ESP_ENABLE_WIFI        // check if wifi is enabled in sdkconfig
 #ifdef CONFIG_ESP_ENABLE_WIFI_STA    // check if station mode is enabled
@@ -23,6 +32,32 @@
 #endif                               // CONFIG_ESP_ENABLE_WIFI
 #include "utility.h"                 // used for printing chip info
 #include "ds18b20_wrapper.h"         // for setting up and interfacing with the temp sensor via owb
+#include "timer.h"
+
+int num_sensors = 0;
+esp_timer_handle_t periodic_temp_timer;
+
+static const char *TAG = "esp32-warm-water";
+
+static void poll_sensor_handler(void *arg)
+{
+    float results[sizeof(float) * num_sensors];    // create correctly sized float array for the sensor data
+    ds18b20_wrapped_capture(results, num_sensors); // pass float array through to be captured to
+    // check status and stuff here
+    for (int i = 0; i < num_sensors; ++i)
+    {
+        ESP_LOGI(TAG, "%d: %.3f\n", i, results[i]);
+    }
+}
+/*
+free resources and ensure safe shutdown of app
+*/
+void app_deinit(void)
+{
+    ds18b20_wrapped_deinit();
+    fflush(stdout);
+    // turn relay off
+}
 
 /** main method that is run by default (similar to arduino style setup) */
 void app_main(void)
@@ -35,9 +70,9 @@ void app_main(void)
 #endif                                                                        // CONFIG_ESP_ENABLE_WIFI && CONFIG_ESP_ENABLE_WIFI_SOFTAP
     led_init();                                                               // setup led gpio pin
     print_chip_info();                                                        // print the chip features and details
-    ds18b20_wrapped_init();                                                   //
-    ds18b20_wrapped_read();                                                   //
-    led_on();
 
-    fflush(stdout); // flush stdout stream
+    num_sensors = ds18b20_wrapped_init(); // capture num sensors and init
+    general_timer_init(periodic_temp_timer, poll_sensor_handler, true, 5, "temp_sensor_poll_timer");
+
+    led_on();
 }
