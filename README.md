@@ -1,6 +1,6 @@
 # warm water in esp-idf
 
-esp-idf implementation of temperature controlled relay to switch a heating element to maintain water in a specific temperature range. 
+esp-idf implementation of temperature controlled relay to switch a heating element to maintain water in a specific temperature range.
 A webserver is used to interface with the system and change the goal temperature, range from the goal and the relay state (forced on or off).
 
 employs wifi, onewire and a relay to control the temperature of a body of water for the purpose of film development primarily. other uses include cooking and general chemistry.
@@ -9,9 +9,9 @@ the main motivation to do this project was to be able to better process c41 colo
 
 ## how to use project
 
-this project is built using the Visual Studio Code esp-idf plugin. 
+this project is built using the Visual Studio Code esp-idf plugin.
 
-configure it from command line using `idf.py` or by using the cog in the plugin. 
+configure it from command line using `idf.py` or by using the cog in the plugin.
 
 once it is configured, select the correct port of your ESP32 module and build and upload to it.
 
@@ -19,18 +19,18 @@ an explanation of the hardware setup will come at a later stage.
 
 ## dependencies
 
-- [esp32-ds18b20](../esp32-ds18b20)
-- [esp32-gpio](../esp32-gpio)
-- [esp32-owb](https://github.com/DavidAntliff/esp32-owb)
-- [esp32-utility](../esp32-utility)
-- [esp32-wifi](../esp32-wifi)
-- [esp32-timer](../esp32-timer)
+- esp32-ds18b20 - [github](https://github.com/wolffshots/esp32-ds18b20) - [gitlab](https://gitlab.com/wolffshots/esp32-ds18b20)
+- esp32-gpio - [github](https://github.com/wolffshots/esp32-gpio) - [gitlab](https://gitlab.com/wolffshots/esp32-gpio)
+- esp32-owb - [github](https://github.com/DavidAntliff/esp32-owb)
+- esp32-utility - [github](https://github.com/wolffshots/esp32-utility) - [gitlab](https://gitlab.com/wolffshots/esp32-utility)
+- esp32-wifi - [github](https://github.com/wolffshots/esp32-wifi) - [gitlab](https://gitlab.com/wolffshots/esp32-wifi)
+- esp32-timer - [github](https://github.com/wolffshots/esp32-timer) - [gitlab](https://gitlab.com/wolffshots/esp32-timer)
 
 ## folder contents
 
 the project **esp32-warm-water** contains one source file in C language [main.c](main/main.c). the file is located in folder [main](main).
 
-esp-idf projects are build using cmake. the project build configuration is contained in `CMakeLists.txt` files that provide set of directives and instructions describing the project's source files and targets (executable, library, or both). 
+esp-idf projects are build using cmake. the project build configuration is contained in `CMakeLists.txt` files that provide set of directives and instructions describing the project's source files and targets (executable, library, or both).
 
 below is short explanation of remaining files in the project folder.
 
@@ -62,14 +62,15 @@ the code in this project is licensed under the MIT license - see LICENSE for det
 
 ## troubleshooting
 
-* program upload failure
+- program upload failure
 
-    * hardware connection is not correct: run `idf.py -p PORT monitor`, and reboot your board to see if there are any output logs.
-    * the baud rate for downloading is too high: lower your baud rate in the `menuconfig` menu, and try again.
+  - hardware connection is not correct: run `idf.py -p PORT monitor`, and reboot your board to see if there are any output logs.
+  - the baud rate for downloading is too high: lower your baud rate in the `menuconfig` menu, and try again.
 
 # helpful commands
-- ```git submodule update --remote --recursive``` - updates the checked out modules to the most recent commit to their main branch
-- ```git push all``` - as setup with ```https://jigarius.com/blog/multiple-git-remote-repositories```
+
+- `git submodule update --remote --recursive` - updates the checked out modules to the most recent commit to their main branch
+- `git push all` - as setup with `https://jigarius.com/blog/multiple-git-remote-repositories`
 
 ## acknowledgements
 
@@ -79,7 +80,7 @@ the code in this project is licensed under the MIT license - see LICENSE for det
 - "1-Wire" is a registered trademark of Maxim Integrated.
 
 # todo
- 
+
 - [ ] timer for temp reads
 - [x] implement general gpio (built in led) - https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/gpio.html
 - [x] implement owb
