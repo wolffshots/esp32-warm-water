@@ -19,11 +19,12 @@ an explanation of the hardware setup will come at a later stage.
 
 ## dependencies
 
-- [esp32-ds18b20](https://github.com/wolffshots/esp32-ds18b20)
-- [esp32-gpio](https://github.com/wolffshots/esp32-gpio)
+- [esp32-ds18b20](../esp32-ds18b20)
+- [esp32-gpio](../esp32-gpio)
 - [esp32-owb](https://github.com/DavidAntliff/esp32-owb)
-- [esp32-utility](https://github.com/wolffshots/esp32-utility)
-- [esp32-wifi](https://github.com/wolffshots/esp32-wifi)
+- [esp32-utility](../esp32-utility)
+- [esp32-wifi](../esp32-wifi)
+- [esp32-timer](../esp32-timer)
 
 ## folder contents
 
