@@ -3,13 +3,13 @@
 	url = git@github.com:DavidAntliff/esp32-owb.git
 [submodule "components/esp32-wifi"]
 	path = components/esp32-wifi
-	url = git@github.com:wolffshots/esp32-wifi.git
+	url = ../esp32-wifi.git
 [submodule "components/esp32-utility"]
 	path = components/esp32-utility
-	url = git@github.com:wolffshots/esp32-utility.git
+	url = ../esp32-utility.git
 [submodule "components/esp32-gpio"]
 	path = components/esp32-gpio
-	url = git@github.com:wolffshots/esp32-gpio.git
+	url = ../esp32-gpio.git
 [submodule "components/esp32-ds18b20-fork"]
 	path = components/esp32-ds18b20
-	url = git@github.com:wolffshots/esp32-ds18b20.git
+	url = ../esp32-ds18b20.git
