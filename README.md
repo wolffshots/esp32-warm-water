@@ -64,7 +64,7 @@ automatically generated API documentation (doxygen) is available [here](https://
 
 ## license
 
-the code in this project is licensed under the MIT license - see LICENSE for details.
+the code in this project is licensed under the MIT license - see [LICENSE](LICENSE.md) for details.
 
 ## troubleshooting
 
