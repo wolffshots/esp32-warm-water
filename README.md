@@ -1,4 +1,5 @@
 # warm water in esp-idf
+Docs: [![couldn't get build status](https://api.travis-ci.com/wolffshots/esp32-warm-water.svg?branch=main "Current doc build status")](https://davidantliff.github.io/esp32-warm-water/index.html)
 
 esp-idf implementation of temperature controlled relay to switch a heating element to maintain water in a specific temperature range.
 A webserver is used to interface with the system and change the goal temperature, range from the goal and the relay state (forced on or off).
