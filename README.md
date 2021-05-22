@@ -23,6 +23,7 @@ an explanation of the hardware setup will come at a later stage.
 - esp32-ds18b20 - [github](https://github.com/wolffshots/esp32-ds18b20) - [gitlab](https://gitlab.com/wolffshots/esp32-ds18b20) - [docs](https://wolffshots.github.io/esp32-ds18b20/index.html)
 - esp32-gpio - [github](https://github.com/wolffshots/esp32-gpio) - [gitlab](https://gitlab.com/wolffshots/esp32-gpio) - [docs](https://wolffshots.github.io/esp32-gpio/index.html)
 - esp32-owb - [github](https://github.com/wolffshots/esp32-owb) - [gitlab](https://gitlab.com/wolffshots/esp32-owb) - [docs](https://wolffshots.github.io/esp32-owb/index.html)
+- esp32-ssd1306 - [github](https://github.com/wolffshots/esp32-ssd1306) - [gitlab](https://gitlab.com/wolffshots/esp32-ssd1306) - [docs](https://wolffshots.github.io/esp32-ssd1306/index.html)
 - esp32-utility - [github](https://github.com/wolffshots/esp32-utility) - [gitlab](https://gitlab.com/wolffshots/esp32-utility) - [docs](https://wolffshots.github.io/esp32-utility/index.html)
 - esp32-wifi - [github](https://github.com/wolffshots/esp32-wifi) - [gitlab](https://gitlab.com/wolffshots/esp32-wifi) - [docs](https://wolffshots.github.io/esp32-wifi/index.html)
 - esp32-timer - [github](https://github.com/wolffshots/esp32-timer) - [gitlab](https://gitlab.com/wolffshots/esp32-timer) - [docs](https://wolffshots.github.io/esp32-timer/index.html)
@@ -40,6 +41,7 @@ below is short explanation of remaining files in the project folder.
 |   ├── esp32-ds18b20           used to interface with the temperature sensor (includes wrapper)
 |   ├── esp32-gpio              little gpio wrapper to simplify setup
 |   ├── esp32-owb               enables use of the one wire bus protocol
+|   ├── esp32-ssd1306           led interface library
 |   ├── esp32-utility           some extra helper functions for debugging and qol
 |   └── esp32-wifi              some wrappers for the esp wifi functions
 ├── main                        main component

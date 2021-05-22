@@ -61,6 +61,7 @@
 #include "utility.h"                 // used for printing chip info
 #include "ds18b20_wrapper.h"         // for setting up and interfacing with the temp sensor via owb
 #include "timer.h"                   // wrappers for setting up high resolution timers
+#include "ssd1306.h"
 
 int num_sensors = 0;                    ///< the number of sensors ds18b20 init has found (initially 0)
 esp_timer_handle_t periodic_temp_timer; ///< variable to control the timer associated with running the temperature polling
