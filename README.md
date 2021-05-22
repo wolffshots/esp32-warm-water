@@ -87,12 +87,14 @@ the code in this project is licensed under the MIT license - see LICENSE for det
 
 # todo
 
-- [ ] timer for temp reads
+- [x] timer for temp reads
 - [x] implement general gpio (built in led) - https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/gpio.html
 - [x] implement owb
 - [x] implement ds18b20 - https://github.com/DavidAntliff/esp32-ds18b20-example
 - [x] cleanup wifi component
 - [x] cleanup readmes
+- [ ] goal temp
+- [ ] margins for goal temp
 - [ ] spiffs!
 - [ ] webserver/url handling - https://github.com/espressif/esp-idf/tree/master/examples/protocols/http_server/file_serving
 - [ ] component unit testing - https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/unit-tests.html
