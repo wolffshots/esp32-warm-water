@@ -14,7 +14,7 @@ env:
 # Install dependencies
 before_install:
   - sudo apt-get update
-  - sudo apt-get -s -y install libc6=2.31-0ubuntu9.2
+  - sudo apt-get -s -y --allow-downgrades install libc6=2.31-0ubuntu9.2
   - sudo apt-get -y install graphviz libclang-common-9-dev libclang1-9 libllvm9 libc6 libgcc-s1 libllvm9 libstdc++6 lib32gcc-s1 lib32stdc++6 libc6-i386
   - wget -c https://doxygen.nl/files/doxygen-1.9.1.linux.bin.tar.gz -O - | tar -xz
   - cd doxygen-1.9.1/
