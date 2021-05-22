@@ -40,6 +40,7 @@ script:
 # Deploy using Travis-CI/GitHub Pages integration support
 deploy:
   provider: pages
+  skip_cleanup: true
   local-dir: doc/html
   github-token: $TRAVIS_TOKEN
   on:
