@@ -29,6 +29,15 @@ jobs:
       script:
         - cd doc
         - doxygen
+        # Deploy using Travis-CI/GitHub Pages integration support
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        local-dir: doc/html
+        github-token: $TRAVIS_TOKEN
+        on:
+          branch: main
+        target-branch: gh-pages
     - stage: "Build"
       # Install build dependencies
       addons:
@@ -63,13 +72,4 @@ jobs:
         - cd $TRAVIS_BUILD_DIR
         - idf.py size
 
-# Deploy using Travis-CI/GitHub Pages integration support
-deploy:
-  provider: pages
-  skip_cleanup: true
-  local-dir: doc/html
-  github-token: $TRAVIS_TOKEN
-  on:
-    branch: main
-  target-branch: gh-pages
 
