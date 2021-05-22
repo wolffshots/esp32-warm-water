@@ -14,6 +14,7 @@ env:
 # Install dependencies
 before_install:
   - sudo apt-get update
+  - sudo apt install -y graphviz
   - sudo apt install -y libclang1-9 libclang1-9 libllvm9
   - sudo apt install -y libclang-cpp9
   - wget -c https://doxygen.nl/files/doxygen-1.9.1.linux.bin.tar.gz -O - | tar -xz
@@ -22,21 +23,10 @@ before_install:
   - cd ..
   - rm -fr doxygen-1.9.1 # crucial so it doesn't document itself
 
-# addons:
-#   apt:
-#     packages:
-#       - doxygen
-#       - doxygen-doc
-#       - doxygen-latex
-#       - doxygen-gui
-#       - graphviz
-
 # Build the docs
 script:
   - cd doc
   - doxygen
-  - lsb_release -a
-  - doxygen -v
 
 # Deploy using Travis-CI/GitHub Pages integration support
 deploy:
