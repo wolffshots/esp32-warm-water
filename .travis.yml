@@ -15,7 +15,7 @@ env:
 # Install dependencies
 before_install:
   - sudo apt-get update
-  - sudo apt-get -y install graphviz libclang1
+  - sudo apt-get -y install graphviz libclang-9-dev
   - wget -c https://doxygen.nl/files/doxygen-1.9.1.linux.bin.tar.gz -O - | tar -xz
   - cd doxygen-1.9.1/
   - sudo make install
