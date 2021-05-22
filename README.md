@@ -20,12 +20,12 @@ an explanation of the hardware setup will come at a later stage.
 
 ## dependencies
 
-- esp32-ds18b20 - [github](https://github.com/wolffshots/esp32-ds18b20) - [gitlab](https://gitlab.com/wolffshots/esp32-ds18b20)
-- esp32-gpio - [github](https://github.com/wolffshots/esp32-gpio) - [gitlab](https://gitlab.com/wolffshots/esp32-gpio)
-- esp32-owb - [github](https://github.com/DavidAntliff/esp32-owb)
-- esp32-utility - [github](https://github.com/wolffshots/esp32-utility) - [gitlab](https://gitlab.com/wolffshots/esp32-utility)
-- esp32-wifi - [github](https://github.com/wolffshots/esp32-wifi) - [gitlab](https://gitlab.com/wolffshots/esp32-wifi)
-- esp32-timer - [github](https://github.com/wolffshots/esp32-timer) - [gitlab](https://gitlab.com/wolffshots/esp32-timer)
+- esp32-ds18b20 - [github](https://github.com/wolffshots/esp32-ds18b20) - [gitlab](https://gitlab.com/wolffshots/esp32-ds18b20) - [docs](https://wolffshots.github.io/esp32-ds18b20/index.html)
+- esp32-gpio - [github](https://github.com/wolffshots/esp32-gpio) - [gitlab](https://gitlab.com/wolffshots/esp32-gpio) - [docs](https://wolffshots.github.io/esp32-gpio/index.html)
+- esp32-owb - [github](https://github.com/wolffshots/esp32-owb) - [gitlab](https://gitlab.com/wolffshots/esp32-owb) - [docs](https://wolffshots.github.io/esp32-owb/index.html)
+- esp32-utility - [github](https://github.com/wolffshots/esp32-utility) - [gitlab](https://gitlab.com/wolffshots/esp32-utility) - [docs](https://wolffshots.github.io/esp32-utility/index.html)
+- esp32-wifi - [github](https://github.com/wolffshots/esp32-wifi) - [gitlab](https://gitlab.com/wolffshots/esp32-wifi) - [docs](https://wolffshots.github.io/esp32-wifi/index.html)
+- esp32-timer - [github](https://github.com/wolffshots/esp32-timer) - [gitlab](https://gitlab.com/wolffshots/esp32-timer) - [docs](https://wolffshots.github.io/esp32-timer/index.html)
 
 ## folder contents
 
