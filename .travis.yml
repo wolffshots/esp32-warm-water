@@ -1,5 +1,5 @@
 # Build and deploy doxygen documention to GitHub Pages
-sudo: true
+sudo: false
 dist: hirsute
 
 # Blacklist
@@ -15,7 +15,7 @@ env:
 # Install dependencies
 before_install:
   - sudo apt-get update
-  - sudo apt-get -y doxygen doxygen-doc doxygen-latex doxygen-gui graphviz
+  - sudo apt-get -y install doxygen doxygen-doc doxygen-latex doxygen-gui graphviz
 # addons:
 #   apt:
 #     packages:
