@@ -1,7 +1,6 @@
 # Build and deploy doxygen documention to GitHub Pages
-# sudo: false
-# dist: focal
-os: windows
+sudo: true
+dist: focal
 
 # Blacklist
 branches:
@@ -14,14 +13,12 @@ env:
     - GH_REPO_REF: github.com/wolffshots/esp32-warm-water.git
 
 # Install dependencies
-# before_install:
-# - curl https://doxygen.nl/files/doxygen-1.9.1.windows.bin.zip -O doxygen.zip
-# - tar -xvf .\doxygen.zip
-  # - apt-get update
-  # - apt-get -y install graphviz libclang1-9 libllvm9 libc6 libgcc-s1 libllvm9 libstdc++6
-  # - wget -c https://doxygen.nl/files/doxygen-1.9.1.linux.bin.tar.gz -O - | tar -xz
-  # - cd doxygen-1.9.1/
-  # - sudo make install
+before_install:
+  - apt-get update
+  - apt-get -y install graphviz libclang-common-9-dev libclang1-9 libllvm9 libc6 libgcc-s1 libllvm9 libstdc++6 lib32gcc-s1 lib32stdc++6 libc6-i386
+  - wget -c https://doxygen.nl/files/doxygen-1.9.1.linux.bin.tar.gz -O - | tar -xz
+  - cd doxygen-1.9.1/
+  - make install
 
 # addons:
 #   apt:
@@ -35,9 +32,8 @@ env:
 # Build the docs
 script:
   - cd doc
-  - curl https://doxygen.nl/files/doxygen-1.9.1.windows.bin.zip -O doxygen.zip
-  - tar -xvf .\doxygen.zip
   - doxygen
+  - lsb_release -a
   - doxygen -v
 
 # Deploy using Travis-CI/GitHub Pages integration support
