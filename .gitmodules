@@ -14,4 +14,5 @@
 	path = components/esp32-timer
 	url = ../esp32-timer.git
 [submodule "components/esp32-owb"]
+	path = components/esp32-owb
 	url = ../esp32-owb.git
