@@ -20,6 +20,7 @@ before_install:
   - cd doxygen-1.9.1/
   - sudo make install
   - cd ..
+  - rm -fr doxygen-1.9.1 # crucial so it doesn't document itself
 
 # addons:
 #   apt:
