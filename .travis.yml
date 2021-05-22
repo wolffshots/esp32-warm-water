@@ -1,6 +1,6 @@
 # Build and deploy doxygen documention to GitHub Pages
 sudo: false
-dist: trusty
+dist: hirsute
 
 # Blacklist
 branches:
