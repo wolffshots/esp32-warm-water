@@ -1,5 +1,4 @@
 # Build and deploy doxygen documention to GitHub Pages
-sudo: true
 dist: focal
 
 # Blacklist
@@ -14,11 +13,11 @@ env:
 
 # Install dependencies
 before_install:
-  - apt-get update
-  - apt-get -y install graphviz libclang-common-9-dev libclang1-9 libllvm9 libc6 libgcc-s1 libllvm9 libstdc++6 lib32gcc-s1 lib32stdc++6 libc6-i386
+  - sudo apt-get update
+  - sudo apt-get -y install graphviz libclang-common-9-dev libclang1-9 libllvm9 libc6 libgcc-s1 libllvm9 libstdc++6 lib32gcc-s1 lib32stdc++6 libc6-i386
   - wget -c https://doxygen.nl/files/doxygen-1.9.1.linux.bin.tar.gz -O - | tar -xz
   - cd doxygen-1.9.1/
-  - make install
+  - sudo make install
 
 # addons:
 #   apt:
@@ -39,7 +38,6 @@ script:
 # Deploy using Travis-CI/GitHub Pages integration support
 deploy:
   provider: pages
-  skip-cleanup: true
   local-dir: doc/html
   github-token: $TRAVIS_TOKEN
   on:
