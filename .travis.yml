@@ -56,11 +56,11 @@ jobs:
         - ./install.sh
         - . ~/esp/esp-idf/export.sh
       script:
-        - cd build/example
+        - cd $TRAVIS_BUILD_DIR/esp32-warm-water
         - idf.py reconfigure
         - idf.py app
       after_success:
-        - cd build/example
+        - cd $TRAVIS_BUILD_DIR/esp32-warm-water
         - idf.py size
 
 # Deploy using Travis-CI/GitHub Pages integration support
