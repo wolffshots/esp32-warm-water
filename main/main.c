@@ -27,6 +27,7 @@
 /**
  * @file main.c
  * @author wolffshots
+ * @brief main entrypoint for the warm-water project
  *
  * esp-idf warm-water project. 
  * 
