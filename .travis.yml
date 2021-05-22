@@ -29,6 +29,7 @@ before_install:
 script:
   - cd doc
   - doxygen
+  - lsb_release -a
   - doxygen -v
 
 # Deploy using Travis-CI/GitHub Pages integration support
