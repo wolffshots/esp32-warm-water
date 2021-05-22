@@ -18,7 +18,7 @@ before_install:
   - sudo apt-get -y install graphviz
   - wget -c https://doxygen.nl/files/doxygen-1.9.1.linux.bin.tar.gz -O - | tar -xz
   - cd doxygen-1.9.1/
-  - make install
+  - sudo make install
 
 # addons:
 #   apt:
