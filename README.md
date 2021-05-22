@@ -56,6 +56,11 @@ below is short explanation of remaining files in the project folder.
 
 for more information on structure and contents of esp-idf projects, please refer to Section [Build System](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/build-system.html) of the esp-idf programming guide.
 
+
+## documentation
+
+automatically generated API documentation (doxygen) is available [here](https://wolffshots.github.io/esp32-warm-water/index.html).
+
 ## license
 
 the code in this project is licensed under the MIT license - see LICENSE for details.
