@@ -62,36 +62,72 @@
 #include "ds18b20_wrapper.h"         // for setting up and interfacing with the temp sensor via owb
 #include "timer.h"                   // wrappers for setting up high resolution timers
 #include "ssd1306.h"
+#include "esp_log.h"
+#include "control.h"
 
-int num_sensors = 0;                    ///< the number of sensors ds18b20 init has found (initially 0)
-esp_timer_handle_t periodic_temp_timer; ///< variable to control the timer associated with running the temperature polling
+int num_sensors = 0;                     ///< the number of sensors ds18b20 init has found (initially 0)
+esp_timer_handle_t periodic_check_timer; ///< variable to control the timer associated with running the temperature polling to check system
+
+volatile float goal = 0.0f;    ///< goal temp for the system to aim for
+volatile float under = 0.5f;   ///< margin below goal temp at which to turn relay on
+volatile float over = 0.5f;    ///< margin above goal temp at which to turn relay off
+volatile bool heating = false; ///< whether or not the system should be outputing a signal to enable the relay (note: could be used to control pump as well)
 
 static const char *TAG = "esp32-warm-water";
 
 /**
- * polls the ds18b20 sensor for it's latest temperatures
+ * polls the ds18b20 sensor for it's latest temperatures and 
+ * checks what range we are in with respect to the goal and
+ * sets the output to the relay accordingly
  * @param arg void pointer mainly because that's the fingerprint that the isr expects.
  * a void pointer holds some address to an unknown type. read more at: 
  * @link https://www.geeksforgeeks.org/void-pointer-c-cpp/
  */
-static void poll_sensor_handler(void *arg)
+void check_system_handler(void *arg)
 {
-    float results[sizeof(float) * num_sensors];    ///< create correctly sized float array for the sensor data
-    ds18b20_wrapped_capture(results, num_sensors); // pass float array through to be captured to
-    // check status and stuff here
-    for (int i = 0; i < num_sensors; ++i)           // for each sensor
-    {                                               //
-        ESP_LOGI(TAG, "%d: %.3f\n", i, results[i]); // log result out
-    }                                               // this will probably be phased out once relay control is implemented
+    float results[sizeof(float) * num_sensors];                                   ///< create correctly sized float array for the sensor data
+    ds18b20_wrapped_capture(results, num_sensors);                                // pass float array through to be captured to
+    check_relay(results[0]);                                                      ///< average temp across sensors (for now =results[0] until we have averaging is implemented)
+    for (int i = 0; i < num_sensors; ++i)                                         // for each sensor
+    {                                                                             //
+        ESP_LOGI(TAG, "%d: %.3f - %lld us", i, results[i], esp_timer_get_time()); // log result out
+    }                                                                             // this will probably be phased out once relay control is implemented
 }
+/**
+ * check if a change in the relay's operation is necessary and perform it if so
+ */
+void check_relay(float average_temp)
+{
+    /// @todo average results/check difference between sensors if multiple here
+
+    if ((average_temp > goal + over) && heating) // check status and stuff here
+    {
+        // turn off relay
+        heating = false;
+    }
+    else if ((average_temp < goal - under) && !heating)
+    {
+        // turn on relay
+        heating = true;
+    }
+    else
+    {
+        // continue what it's currently doing
+        // heating = heating
+    }
+}
+
 /**
  * free resources and ensure safe shutdown of app
  */
 void app_deinit(void)
 {
-    ds18b20_wrapped_deinit();
+    general_timer_deinit(periodic_check_timer); ///< cleanup timer associated with checking temp and relay
+    relay_deinit();                             ///< relay off and deinit gpio
+    ds18b20_wrapped_deinit();                   ///< deallocate owb and ds18b20
+    ssd1306_deinit();                           ///< deallocate i2c and ssd1306
+    wifi_shared_deinit();                       ///< wifi off and deinit
     fflush(stdout);
-    // turn relay off
 }
 
 /** 
@@ -109,7 +145,7 @@ void app_main(void)
     print_chip_info();                                                        // print the chip features and details
 
     num_sensors = ds18b20_wrapped_init(); // capture num sensors and init
-    general_timer_init(periodic_temp_timer, poll_sensor_handler, true, 5, "temp_sensor_poll_timer");
+    general_timer_init(periodic_check_timer, check_system_handler, true, CONFIG_CONTROL_INTERVAL, "check_system_handler");
 
     led_on();
 }

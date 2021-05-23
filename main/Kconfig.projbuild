@@ -5,4 +5,9 @@ menu "wolffshots/esp32-warm-water config"
         default 5
         help
             the pin of the LED built into the board if it has one (set to -1 otherwise)
+    config CONTROL_INTERVAL
+        int "period in which to poll the sensor and check the status"
+        default 5000
+        help
+            poll window for checking the temp sensor and setting the relay (in milliseconds)
 endmenu
