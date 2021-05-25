@@ -955,6 +955,7 @@ RECURSIVE              = YES
 EXCLUDE                = ../components/esp32-ds18b20/LICENSE.md \
                          ../components/esp32-gpio/LICENSE.md \
                          ../components/esp32-owb/LICENSE.md \
+                         ../components/esp32-ssd1306/LICENSE.md \
                          ../components/esp32-timer/LICENSE.md \
                          ../components/esp32-utility/LICENSE.md \
                          ../components/esp32-wifi/LICENSE.md
