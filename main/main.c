@@ -73,6 +73,9 @@ volatile float under = 0.5f;                    ///< margin below goal temp at w
 volatile float over = 0.5f;                     ///< margin above goal temp at which to turn relay off
 volatile bool heating = false;                  ///< whether or not the system should be outputing a signal to enable the relay (note: could be used to control pump as well)
 
+SSD1306_t dev; ///< device for oled
+// char lineChar[20];
+
 static const char *TAG = "esp32-warm-water";
 
 /**
@@ -125,7 +128,7 @@ void app_deinit(void)
     general_timer_deinit(periodic_check_timer); ///< cleanup timer associated with checking temp and relay
     relay_deinit();                             ///< relay off and deinit gpio
     ds18b20_wrapped_deinit();                   ///< deallocate owb and ds18b20
-    ssd1306_deinit();                           ///< deallocate i2c and ssd1306
+    ssd1306_deinit(&dev);                       ///< deallocate i2c and ssd1306
     wifi_shared_deinit();                       ///< wifi off and deinit
     fflush(stdout);
 }
@@ -145,7 +148,11 @@ void app_main(void)
     print_chip_info();                                                        // print the chip features and details
 
     num_sensors = ds18b20_wrapped_init(); // capture num sensors and init
+
     general_timer_init(periodic_check_timer, check_system_handler, true, CONFIG_CONTROL_INTERVAL, "check_system_handler");
+
+    ssd1306_init(&dev);
+    ssd1306_wrapped_display_text(&dev, 2, "wrapped");
 
     led_on();
 }
