@@ -85,7 +85,7 @@ jobs:
             idf.py reconfigure &&
             idf.py app
     - name: Build esp-idf Code - after success
-      run:  . /home/runner/work/esp32-warm-water/esp32-warm-water/esp/esp-idf/export.sh &&
+      run:  . /home/runner/work/esp32-warm-water/esp/esp-idf/export.sh &&
             idf.py size
 
     - name: Perform CodeQL Analysis
