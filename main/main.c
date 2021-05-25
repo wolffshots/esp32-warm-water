@@ -68,10 +68,10 @@
 int num_sensors = 0;                     ///< the number of sensors ds18b20 init has found (initially 0)
 esp_timer_handle_t periodic_check_timer; ///< variable to control the timer associated with running the temperature polling to check system
 
-volatile float goal = 0.0f;    ///< goal temp for the system to aim for
-volatile float under = 0.5f;   ///< margin below goal temp at which to turn relay on
-volatile float over = 0.5f;    ///< margin above goal temp at which to turn relay off
-volatile bool heating = false; ///< whether or not the system should be outputing a signal to enable the relay (note: could be used to control pump as well)
+volatile float goal = CONFIG_INITIAL_GOAL_TEMP; ///< goal temp for the system to aim for
+volatile float under = 0.5f;                    ///< margin below goal temp at which to turn relay on
+volatile float over = 0.5f;                     ///< margin above goal temp at which to turn relay off
+volatile bool heating = false;                  ///< whether or not the system should be outputing a signal to enable the relay (note: could be used to control pump as well)
 
 static const char *TAG = "esp32-warm-water";
 

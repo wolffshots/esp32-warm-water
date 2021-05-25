@@ -10,4 +10,9 @@ menu "wolffshots/esp32-warm-water config"
         default 5000
         help
             poll window for checking the temp sensor and setting the relay (in milliseconds)
+    config INITIAL_GOAL_TEMP
+        int "initial goal temp (as an int)"
+        default 25
+        help
+            the initial goal temp for the system to boot up with
 endmenu
