@@ -76,7 +76,7 @@ jobs:
             ./install.sh > /dev/null
     - name: Build esp-idf Code - build warm-water
       run:  . /home/runner/work/esp32-warm-water/esp32-warm-water/esp/esp-idf/export.sh &&
-            ls &&
+            cd /home/runner/work/esp32-warm-water/esp32-warm-water/
             idf.py reconfigure &&
             idf.py app
     - name: Build esp-idf Code - after success
