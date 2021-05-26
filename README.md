@@ -19,6 +19,20 @@ once it is configured, select the correct port of your ESP32 module and build an
 
 an explanation of the hardware setup will come at a later stage.
 
+## frontend files
+
+the files in the `front` directory are for displaying via the webserver and are sort of a separate entity from the rest of the code. 
+
+they automatically get made into an image but don't seem to flash with the vscode extension buttons (as a result you may need to run `idf.py -p PORT flash` for changes to persist).
+
+the frontend can be coded in whatever framework you want as long as you can get it built into a flat file structure (all in one directory without subdirectories). i am partial to vanilla html, css and javascript but there are plenty of lightweight frameworks (like [svelte](https://svelte.dev/) and [preact](https://preactjs.com/)).
+
+any file in `front` should get flashed to `/spiffs` but ensure that the `front` directory doens't exceed the size of the `/spiffs` partition (default 960KB).
+
+- `/` - the root path which serves `index.html`
+- @todo add more reserved locations here
+- any other path should attempt to be read from spiffs and 404 if not found
+
 ## dependencies
 
 - esp32-ds18b20 - [github](https://github.com/wolffshots/esp32-ds18b20) - [gitlab](https://gitlab.com/wolffshots/esp32-ds18b20) - [docs](https://wolffshots.github.io/esp32-ds18b20/index.html)

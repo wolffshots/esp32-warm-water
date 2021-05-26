@@ -1,4 +1,3 @@
-set(COMPONENT_SRCDIRS ".")
-set(COMPONENT_ADD_INCLUDEDIRS "." "include")
-
-register_component()
+idf_component_register(SRC_DIRS "."
+                    INCLUDE_DIRS "." "include"
+                    EMBED_FILES "../front/favicon.ico" "../front/index.html")

@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<!-- test spiff -->
+<!--
+    MIT License
+
+    Copyright (c) 2021 wolffshots
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE. 
+-->
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+
+    <title>ESP32 Interface</title>
+
+    <link
+      href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA/4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERERERERERERAAAAAAAAERAQAAAAAAEBEAEAAAAAEAEQABAAAAEAARAAAQAAEAABEAAAEAEAAAEQAAABEAAAARAAAAEQAAABEAAAEAEAAAEQAAEAABAAARAAEAAAAQABEAEAAAAAEAEQEAAAAAABAREAAAAAAAAREREREREREREAAAAAP/wAAF/6AABv9gAAd+4AAHveAAB9vgAAfn4AAH5+AAB9vgAAe94AAHfuAABv9gAAX/oAAD/8AAAAAAAA"
+      rel="icon"
+      type="image/x-icon"
+    />
+
+    <link rel="manifest" href="manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Temp Control" />
+    <meta name="apple-mobile-web-app-title" content="Temp Control" />
+    <meta name="theme-color" content="#C9FAFA" />
+    <meta name="msapplication-navbutton-color" content="#C9FAFA" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="msapplication-starturl" content="/" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="https://github.com/wolffshots/svgs/raw/main/logo512.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="512x512"
+      href="https://github.com/wolffshots/svgs/raw/main/logo512.png"
+    />
+    <link
+      rel="icon"
+      sizes="390x390"
+      href="https://github.com/wolffshots/svgs/raw/main/logo_some_borders.svg"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="390x390"
+      href="https://github.com/wolffshots/svgs/raw/main/logo_some_borders.svg"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="384x384"
+      href="https://github.com/wolffshots/svgs/raw/main/maskable_icon_x384.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="384x384"
+      href="https://github.com/wolffshots/svgs/raw/main/maskable_icon_x384.png"
+    />
+
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      @font-face {
+        font-family: "Ubuntu";
+        src: url("http://wolffshots.ddns.net:666/fonts/Ubuntu-R.woff2")
+            format("woff2"),
+          url("http://wolffshots.ddns.net:666/fonts/Ubuntu-R.ttf")
+            format("truetype"),
+          url("http://wolffshots.ddns.net:666/fonts/Ubuntu-R.woff")
+            format("woff");
+      }
+      @font-face {
+        font-family: "UbuntuMono";
+        src: url("http://wolffshots.ddns.net:666/fonts/UbuntuMono-R.woff2")
+            format("woff2"),
+          url("http://wolffshots.ddns.net:666/fonts/UbuntuMono-R.ttf")
+            format("truetype"),
+          url("http://wolffshots.ddns.net:666/fonts/UbuntuMono-R.woff")
+            format("woff");
+      }
+      /* @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap'); */
+
+      input:disabled {
+        background: #ccc;
+        cursor: wait;
+      }
+      html {
+        font-family: "Ubuntu", sans-serif;
+      }
+    </style>
+    <script async>
+      let goal = 0;
+      let temp = 0;
+      let upperMrgn = 0;
+      let lowerMrgn = 0;
+      let testingRed = false;
+      let testingOrange = false;
+      const toggleInputDisabled = (id) => {
+        if (document.getElementById(id).disabled) {
+          document.getElementById(id).disabled = false;
+        } else {
+          document.getElementById(id).disabled = true;
+        }
+      };
+      const ledOn = () => {
+        toggleInputDisabled("ledOnBtn");
+        fetch("/ledon").then(() => toggleInputDisabled("ledOnBtn"));
+      };
+      const ledOff = () => {
+        toggleInputDisabled("ledOffBtn");
+        fetch("/ledoff").then(() => toggleInputDisabled("ledOffBtn"));
+      };
+      const rlyOn = () => {
+        toggleInputDisabled("rlyOnBtn");
+        fetch("/rlyon").then(() => toggleInputDisabled("rlyOnBtn"));
+      };
+      const rlyOff = () => {
+        toggleInputDisabled("rlyOffBtn");
+        fetch("/rlyoff").then(() => toggleInputDisabled("rlyOffBtn"));
+      };
+      const rlyReset = () => {
+        toggleInputDisabled("rlyResetBtn");
+        fetch("/rlyreset").then(() => toggleInputDisabled("rlyResetBtn"));
+      };
+      const setTemp = () => {
+        const newTemp = window.prompt("new temp:");
+        if (newTemp && !isNaN(newTemp)) {
+          toggleInputDisabled("setTempBtn");
+          // check validity
+          fetch(`/settemp?temp=${newTemp}`)
+            .then(() => toggleInputDisabled("setTempBtn"))
+            .finally(() => update());
+        }
+      };
+      const setUpperMrgn = () => {
+        const newUpperMrgn = window.prompt("new upper margin:");
+        if (newUpperMrgn && !isNaN(newUpperMrgn)) {
+          toggleInputDisabled("setUpperMrgnBtn");
+          // check validity
+          fetch(`/setuppermargin?margin=${newUpperMrgn}`)
+            .then(() => toggleInputDisabled("setUpperMrgnBtn"))
+            .finally(() => update());
+        }
+      };
+      const setLowerMrgn = () => {
+        const newLowerMrgn = window.prompt("new lower margin:");
+        if (newLowerMrgn && !isNaN(newLowerMrgn)) {
+          toggleInputDisabled("setLowerMrgnBtn");
+          // check validity
+          fetch(`/setlowermargin?margin=${newLowerMrgn}`)
+            .then(() => toggleInputDisabled("setLowerMrgnBtn"))
+            .finally(() => update());
+        }
+      };
+      const incTemp = () => {
+        toggleInputDisabled("incTempBtn");
+        fetch("/inctemp")
+          .then(() => toggleInputDisabled("incTempBtn"))
+          .finally(() => update());
+      };
+      const decTemp = () => {
+        toggleInputDisabled("decTempBtn");
+        fetch("/dectemp")
+          .then(() => toggleInputDisabled("decTempBtn"))
+          .finally(() => update());
+      };
+      const toggleNavbar = () => {
+        const mobileNavbar = document.getElementById("mobileNavbar");
+        if (mobileNavbar.style.height === "5rem") {
+          mobileNavbar.style.height = 0;
+        } else {
+          mobileNavbar.style.height = "5rem";
+        }
+      };
+      const processResponse = (body) => {
+        return body
+          .then((rb) => {
+            const reader = rb.getReader();
+            return new ReadableStream({
+              start(controller) {
+                function push() {
+                  reader.read().then(({ done, value }) => {
+                    if (done) {
+                      controller.close();
+                      return;
+                    }
+                    controller.enqueue(value);
+                    push();
+                  });
+                }
+                push();
+              },
+            });
+          })
+          .then((stream) => {
+            return new Response(stream, {
+              headers: { "Content-Type": "text/plain" },
+            }).text();
+          })
+          .then((result) => result)
+          .catch(() => {
+            console.log(`couldn't convert response to text`);
+            return 0;
+          });
+      };
+      let consecutivePacketsLost = 0;
+      const update = async (code) => {
+        // console.log("updating");
+        goal = await processResponse(
+          fetch("/getgoal")
+            .then((res) => res.body)
+            .catch(() => consecutivePacketsLost++)
+        );
+        document.getElementById("goalOutput").value = goal + "°C";
+        temp = await processResponse(
+          fetch("/gettemp")
+            .then((res) => res.body)
+            .catch(() => consecutivePacketsLost++)
+        );
+        document.getElementById("tempOutput").value = temp + "°C";
+        upperMrgn = await processResponse(
+          fetch("/getuppermargin")
+            .then((res) => res.body)
+            .catch(() => consecutivePacketsLost++)
+        );
+        document.getElementById("upperMrgn").value =
+          upperMrgn + "°C (above the goal)";
+        lowerMrgn = await processResponse(
+          fetch("/getlowermargin")
+            .then((res) => res.body)
+            .catch(() => consecutivePacketsLost++)
+        );
+        document.getElementById("lowerMrgn").value =
+          lowerMrgn + "°C (below the goal)";
+        // console.log("fetched");
+        if (consecutivePacketsLost > 1 || testingRed) {
+          // set red
+          document.getElementById("statusDot").style.fill = "red";
+          consecutivePacketsLost = consecutivePacketsLost - 2;
+        } else if (consecutivePacketsLost > 0 || testingOrange) {
+          // set orange/yellow
+          consecutivePacketsLost--;
+          document.getElementById("statusDot").style.fill = "orange";
+        } else {
+          // set green
+          document.getElementById("statusDot").style.fill = "green";
+        }
+        // time stamp them here
+        if (code != 1) {
+          console.log("updated");
+        }
+      };
+      let intervalId = setInterval(() => update(1), 3000);
+
+      const restartESP = () => {
+        clearInterval(intervalId);
+        fetch("/restart").then((res) => res.body);
+        setTimeout(() => {
+          intervalId = setInterval(() => update(1), 3000);
+        }, 30000);
+      };
+      const resetESP = () => {
+        clearInterval(intervalId);
+        fetch("/reset").then((res) => res.body);
+        setTimeout(() => {
+          intervalId = setInterval(() => update(1), 3000);
+        }, 30000);
+      };
+    </script>
+  </head>
+  <body>
+    <div class="h-screen bg-gray-800 flex flex-col">
+      <header class="text-gray-900 p-5 bg-gray-300 rounded-b-lg">
+        <noscript
+          >Your browser does not support JavaScript! Some things may not work as
+          intended</noscript
+        >
+        <div class="flex justify-between items-center">
+          <div class="flex items-center gap-5">
+            <img
+              src="https://raw.githubusercontent.com/wolffshots/svgs/main/logo_no_borders.svg"
+              id="logo"
+              style="height: 3rem; width: auto"
+            />
+            <h1>ESP Interface</h1>
+            <svg
+              viewBox="0 0 21 21"
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+            >
+              <circle id="statusDot" cx="10" cy="10" r="9" />
+            </svg>
+          </div>
+          <div class="h-12 md:h-auto">
+            <img
+              src="https://github.com/wolffshots/svgs/raw/main/burger.svg"
+              class="
+                lg:hidden
+                cursor-pointer
+                h-12
+                flex
+                text-center
+                items-center
+              "
+              onclick="toggleNavbar()"
+            />
+            <ul
+              class="hidden lg:grid grid-rows-1 grid-flow-col gap-4 h-auto"
+              id="desktopNavbar"
+            >
+              <li>add stuff</li>
+              <li><a href="https://www.github.com/wolffshots">github</a></li>
+              <li>docs</li>
+            </ul>
+          </div>
+        </div>
+        <ul
+          id="mobileNavbar"
+          style="height: 0px"
+          class="
+            transition-all
+            absolute
+            left-0
+            w-full
+            lg:grid
+            grid-rows-1 grid-flow-col
+            gap-4
+            h-0
+            overflow-hidden
+            lg:h-auto
+            bg-gray-300
+            rounded-b-lg
+            text-right
+            px-5
+          "
+        >
+          <li>add stuff</li>
+          <li><a href="https://www.github.com/wolffshots">github</a></li>
+          <li>docs</li>
+        </ul>
+      </header>
+      <div class="flex justify-center items-center flex-col m-auto">
+        <div class="text-gray-800 w-full my-2">
+          <div
+            id="readingContainer"
+            class="p-1 py-2 md:p-4 mx-1 my-0.5 bg-gray-300 rounded-md"
+          >
+            <div id="goalContainer" class="flex justify-between">
+              goal: <output id="goalOutput" name="goalOutput">0°C</output>
+            </div>
+            <div id="tempContainer" class="flex justify-between">
+              current: <output id="tempOutput" name="tempOutput">0°C</output>
+            </div>
+            <div id="upperContainer" class="flex justify-between">
+              upper: <output id="upperMrgn" name="upperMrgn">0°C</output>
+            </div>
+            <div id="lowerContainer" class="flex justify-between">
+              lower: <output id="lowerMrgn" name="lowerMrgn">0°C</output>
+            </div>
+          </div>
+        </div>
+        <div
+          class="
+            grid grid-flow-row grid-cols-2
+            md:grid-cols-3
+            lg:grid-cols-4
+            md:gap-2
+            text-xl
+            md:text-2xl
+            buttons
+            text-white
+            w-full
+            md:w-auto
+          "
+        >
+          <input
+            id="homeBtn"
+            class="
+              flex
+              items-center
+              justify-center
+              text-center
+              p-1
+              py-2
+              md:p-4
+              mx-1
+              my-0.5
+              rounded-md
+              cursor-pointer
+              disabled:cursor-wait
+              bg-blue-600
+            "
+            value="home"
+            type="button"
+          />
+          <input
+            id="ledOffBtn"
+            class="
+              flex
+              items-center
+              justify-center
+              text-center
+              p-1
+              py-2
+              md:p-4
+              mx-1
+              my-0.5
+              rounded-md
+              cursor-pointer
+              disabled:cursor-wait
+              bg-red-600
+            "
+            onclick="ledOff()"
+            value="led off"
+            type="button"
+          />
+          <input
+            id="ledOnBtn"
+            class="
+              flex
+              items-center
+              justify-center
+              text-center
+              p-1
+              py-2
+              md:p-4
+              mx-1
+              my-0.5
+              rounded-md
+              cursor-pointer
+              disabled:cursor-wait
+              bg-green-600
+            "
+            onclick="ledOn()"
+            value="led on"
+            type="button"
+          />
+          <input
+            id="rlyOnBtn"
+            class="
+              flex
+              items-center
+              justify-center
+              text-center
+              p-1
+              py-2
+              md:p-4
+              mx-1
+              my-0.5
+              rounded-md
+              cursor-pointer
+              disabled:cursor-wait
+              bg-green-900
+            "
+            onclick="rlyOn()"
+            value="relay on"
+            type="button"
+          />
+          <input
+            id="rlyOffBtn"
+            class="
+              flex
+              items-center
+              justify-center
+              text-center
+              p-1
+              py-2
+              md:p-4
+              mx-1
+              my-0.5
+              rounded-md
+              cursor-pointer
+              disabled:cursor-wait
+              bg-red-900
+            "
+            onclick="rlyOff()"
+            value="relay off"
+            type="button"
+          />
+          <input
+            id="rlyResetBtn"
+            class="
+              flex
+              items-center
+              justify-center
+              text-center
+              p-1
+              py-2
+              md:p-4
+              mx-1
+              my-0.5
+              rounded-md
+              cursor-pointer
+              disabled:cursor-wait
+              bg-gray-600
+            "
+            onclick="rlyReset()"
+            value="reset rly"
+            type="button"
+          />
+          <input
+            id="setTempBtn"
+            class="
+              flex
+              items-center
+              justify-center
+              text-center
+              p-1
+              py-2
+              md:p-4
+              mx-1
+              my-0.5
+              rounded-md
+              cursor-pointer
+              disabled:cursor-wait
+              bg-gray-500
+            "
+            onclick="setTemp()"
+            value="set temp"
+            type="button"
+          />
+          <input
+            id="incTempBtn"
+            class="
+              flex
+              items-center
+              justify-center
+              text-center
+              p-1
+              py-2
+              md:p-4
+              mx-1
+              my-0.5
+              rounded-md
+              cursor-pointer
+              disabled:cursor-wait
+              bg-gray-500
+            "
+            onclick="incTemp()"
+            value="inc temp"
+            type="button"
+          />
+          <input
+            id="decTempBtn"
+            class="
+              flex
+              items-center
+              justify-center
+              text-center
+              p-1
+              py-2
+              md:p-4
+              mx-1
+              my-0.5
+              rounded-md
+              cursor-pointer
+              disabled:cursor-wait
+              bg-gray-500
+            "
+            onclick="decTemp()"
+            value="dec temp"
+            type="button"
+          />
+          <input
+            id="setUpperMrgnBtn"
+            class="
+              flex
+              items-center
+              justify-center
+              text-center
+              p-1
+              py-2
+              md:p-4
+              mx-1
+              my-0.5
+              rounded-md
+              cursor-pointer
+              disabled:cursor-wait
+              bg-red-500
+            "
+            onclick="setUpperMrgn()"
+            value="set upper margin"
+            type="button"
+          />
+          <input
+            id="setLowerMrgnBtn"
+            class="
+              flex
+              items-center
+              justify-center
+              text-center
+              p-1
+              py-2
+              md:p-4
+              mx-1
+              my-0.5
+              rounded-md
+              cursor-pointer
+              disabled:cursor-wait
+              bg-red-500
+            "
+            onclick="setLowerMrgn()"
+            value="set lower margin"
+            type="button"
+          />
+          <input
+            id="restartBtn"
+            class="
+              flex
+              items-center
+              justify-center
+              text-center
+              p-1
+              py-2
+              md:p-4
+              mx-1
+              my-0.5
+              rounded-md
+              cursor-pointer
+              disabled:cursor-wait
+              bg-red-500
+            "
+            onclick="restartESP()"
+            value="restart"
+            type="button"
+          />
+          <input
+            id="resetBtn"
+            class="
+              flex
+              items-center
+              justify-center
+              text-center
+              p-1
+              py-2
+              md:p-4
+              mx-1
+              my-0.5
+              rounded-md
+              cursor-pointer
+              disabled:cursor-wait
+              bg-red-500
+            "
+            onclick="resetESP()"
+            value="reset"
+            type="button"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="h-screen bg-gray-200 flex flex-col justify-center px-5 md:px-60"
+    >
+      <p>some explanation maybe here?</p>
+      <p>list of features maybe?</p>
+      <ul>
+        <li>- small</li>
+        <li>- wifi enabled</li>
+        <li>- stats</li>
+        <li>- margin</li>
+        <li>- redundant sensor support</li>
+        <li>- configurable temperature window</li>
+      </ul>
+    </div>
+  </body>
+</html>

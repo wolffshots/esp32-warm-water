@@ -64,6 +64,7 @@
 #include "ssd1306.h"
 #include "esp_log.h"
 #include "control.h"
+#include "spiffs.h"
 
 int num_sensors = 0;                     ///< the number of sensors ds18b20 init has found (initially 0)
 esp_timer_handle_t periodic_check_timer; ///< variable to control the timer associated with running the temperature polling to check system
@@ -153,6 +154,8 @@ void app_main(void)
 
     ssd1306_init(&dev);
     ssd1306_wrapped_display_text(&dev, 2, "wrapped");
+
+    spiffs_init();
 
     led_on();
 }
