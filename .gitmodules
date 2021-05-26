@@ -19,3 +19,6 @@
 [submodule "components/esp32-ssd1306"]
 	path = components/esp32-ssd1306
 	url = ../esp32-ssd1306.git
+[submodule "components/esp32-spiffs"]
+	path = components/esp32-spiffs
+	url = ../esp32-spiffs.git
