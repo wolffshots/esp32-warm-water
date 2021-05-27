@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- test spiff -->
 <!--
     MIT License
 
@@ -135,26 +134,6 @@
           document.getElementById(id).disabled = true;
         }
       };
-      const ledOn = () => {
-        toggleInputDisabled("ledOnBtn");
-        fetch("/ledon").then(() => toggleInputDisabled("ledOnBtn"));
-      };
-      const ledOff = () => {
-        toggleInputDisabled("ledOffBtn");
-        fetch("/ledoff").then(() => toggleInputDisabled("ledOffBtn"));
-      };
-      const rlyOn = () => {
-        toggleInputDisabled("rlyOnBtn");
-        fetch("/rlyon").then(() => toggleInputDisabled("rlyOnBtn"));
-      };
-      const rlyOff = () => {
-        toggleInputDisabled("rlyOffBtn");
-        fetch("/rlyoff").then(() => toggleInputDisabled("rlyOffBtn"));
-      };
-      const rlyReset = () => {
-        toggleInputDisabled("rlyResetBtn");
-        fetch("/rlyreset").then(() => toggleInputDisabled("rlyResetBtn"));
-      };
       const setTemp = () => {
         const newTemp = window.prompt("new temp:");
         if (newTemp && !isNaN(newTemp)) {
@@ -184,18 +163,6 @@
             .then(() => toggleInputDisabled("setLowerMrgnBtn"))
             .finally(() => update());
         }
-      };
-      const incTemp = () => {
-        toggleInputDisabled("incTempBtn");
-        fetch("/inctemp")
-          .then(() => toggleInputDisabled("incTempBtn"))
-          .finally(() => update());
-      };
-      const decTemp = () => {
-        toggleInputDisabled("decTempBtn");
-        fetch("/dectemp")
-          .then(() => toggleInputDisabled("decTempBtn"))
-          .finally(() => update());
       };
       const toggleNavbar = () => {
         const mobileNavbar = document.getElementById("mobileNavbar");
@@ -407,131 +374,6 @@
           "
         >
           <input
-            id="homeBtn"
-            class="
-              flex
-              items-center
-              justify-center
-              text-center
-              p-1
-              py-2
-              md:p-4
-              mx-1
-              my-0.5
-              rounded-md
-              cursor-pointer
-              disabled:cursor-wait
-              bg-blue-600
-            "
-            value="home"
-            type="button"
-          />
-          <input
-            id="ledOffBtn"
-            class="
-              flex
-              items-center
-              justify-center
-              text-center
-              p-1
-              py-2
-              md:p-4
-              mx-1
-              my-0.5
-              rounded-md
-              cursor-pointer
-              disabled:cursor-wait
-              bg-red-600
-            "
-            onclick="ledOff()"
-            value="led off"
-            type="button"
-          />
-          <input
-            id="ledOnBtn"
-            class="
-              flex
-              items-center
-              justify-center
-              text-center
-              p-1
-              py-2
-              md:p-4
-              mx-1
-              my-0.5
-              rounded-md
-              cursor-pointer
-              disabled:cursor-wait
-              bg-green-600
-            "
-            onclick="ledOn()"
-            value="led on"
-            type="button"
-          />
-          <input
-            id="rlyOnBtn"
-            class="
-              flex
-              items-center
-              justify-center
-              text-center
-              p-1
-              py-2
-              md:p-4
-              mx-1
-              my-0.5
-              rounded-md
-              cursor-pointer
-              disabled:cursor-wait
-              bg-green-900
-            "
-            onclick="rlyOn()"
-            value="relay on"
-            type="button"
-          />
-          <input
-            id="rlyOffBtn"
-            class="
-              flex
-              items-center
-              justify-center
-              text-center
-              p-1
-              py-2
-              md:p-4
-              mx-1
-              my-0.5
-              rounded-md
-              cursor-pointer
-              disabled:cursor-wait
-              bg-red-900
-            "
-            onclick="rlyOff()"
-            value="relay off"
-            type="button"
-          />
-          <input
-            id="rlyResetBtn"
-            class="
-              flex
-              items-center
-              justify-center
-              text-center
-              p-1
-              py-2
-              md:p-4
-              mx-1
-              my-0.5
-              rounded-md
-              cursor-pointer
-              disabled:cursor-wait
-              bg-gray-600
-            "
-            onclick="rlyReset()"
-            value="reset rly"
-            type="button"
-          />
-          <input
             id="setTempBtn"
             class="
               flex
@@ -550,48 +392,6 @@
             "
             onclick="setTemp()"
             value="set temp"
-            type="button"
-          />
-          <input
-            id="incTempBtn"
-            class="
-              flex
-              items-center
-              justify-center
-              text-center
-              p-1
-              py-2
-              md:p-4
-              mx-1
-              my-0.5
-              rounded-md
-              cursor-pointer
-              disabled:cursor-wait
-              bg-gray-500
-            "
-            onclick="incTemp()"
-            value="inc temp"
-            type="button"
-          />
-          <input
-            id="decTempBtn"
-            class="
-              flex
-              items-center
-              justify-center
-              text-center
-              p-1
-              py-2
-              md:p-4
-              mx-1
-              my-0.5
-              rounded-md
-              cursor-pointer
-              disabled:cursor-wait
-              bg-gray-500
-            "
-            onclick="decTemp()"
-            value="dec temp"
             type="button"
           />
           <input
@@ -655,27 +455,6 @@
             "
             onclick="restartESP()"
             value="restart"
-            type="button"
-          />
-          <input
-            id="resetBtn"
-            class="
-              flex
-              items-center
-              justify-center
-              text-center
-              p-1
-              py-2
-              md:p-4
-              mx-1
-              my-0.5
-              rounded-md
-              cursor-pointer
-              disabled:cursor-wait
-              bg-red-500
-            "
-            onclick="resetESP()"
-            value="reset"
             type="button"
           />
         </div>
