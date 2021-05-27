@@ -24,4 +24,4 @@
 	url = ../esp32-spiffs.git
 [submodule "front"]
 	path = front
-	url = git@github.com:wolffshots/esp32-warm-water-frontend.git
+	url = ../esp32-warm-water-frontend.git
