@@ -153,7 +153,14 @@ void app_main(void)
     general_timer_init(periodic_check_timer, check_system_handler, true, CONFIG_CONTROL_INTERVAL, "check_system_handler");
 
     ssd1306_init(&dev);
-    ssd1306_wrapped_display_text(&dev, 2, "wrapped");
+    ssd1306_wrapped_display_text(&dev, 0, "0123456789012345");
+    ssd1306_wrapped_display_text(&dev, 1, "abcdefghijklmnop");
+    ssd1306_wrapped_display_text(&dev, 2, "qrstuvwxyzABCDEF");
+    ssd1306_wrapped_display_text(&dev, 3, "GHIJKLMNOPQRSTUV");
+    ssd1306_wrapped_display_text(&dev, 4, "WXYZ!@#$^&*()_+-");
+    ssd1306_wrapped_display_text(&dev, 5, "=`~;':\",./<>?\\|");
+    ssd1306_wrapped_display_text(&dev, 6, "wrapped");
+    ssd1306_wrapped_display_text(&dev, 7, "wrapped");
 
     spiffs_init();
 
