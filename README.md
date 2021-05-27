@@ -116,3 +116,4 @@ the code in this project is licensed under the MIT license - see [LICENSE](LICEN
 - [ ] webserver/url handling - https://github.com/espressif/esp-idf/tree/master/examples/protocols/http_server/file_serving
 - [ ] component unit testing - https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/unit-tests.html
 - [x] implement build testing - https://calinradoni.github.io/pages/200203-travisci-esp-idf.html
+- [ ] make frontend into own git module
