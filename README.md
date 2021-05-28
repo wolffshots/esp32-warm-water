@@ -21,13 +21,13 @@ an explanation of the hardware setup will come at a later stage.
 
 ## frontend files
 
-the files in the `front` directory are for displaying via the webserver and are sort of a separate entity from the rest of the code. 
+the files in the `front/build` directory are for displaying via the webserver and are sort of a separate entity from the rest of the code. 
 
 they automatically get made into an image but don't seem to flash with the vscode extension buttons (as a result you may need to run `idf.py -p PORT flash` for changes to persist).
 
 the frontend can be coded in whatever framework you want as long as you can get it built into a flat file structure (all in one directory without subdirectories). i am partial to vanilla html, css and javascript but there are plenty of lightweight frameworks (like [svelte](https://svelte.dev/) and [preact](https://preactjs.com/)).
 
-any file in `front` should get flashed to `/spiffs` but ensure that the `front` directory doens't exceed the size of the `/spiffs` partition (default 960KB).
+any file in `front/build` should get flashed to `/spiffs` but ensure that the `front/build` directory doens't exceed the size of the `/spiffs` partition (default 960KB).
 
 - `/` - the root path which serves `index.html`
 - @todo add more reserved locations here
