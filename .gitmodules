@@ -22,6 +22,3 @@
 [submodule "components/esp32-spiffs"]
 	path = components/esp32-spiffs
 	url = ../esp32-spiffs.git
-[submodule "front"]
-	path = front
-	url = ../esp32-warm-water-frontend.git
