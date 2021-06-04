@@ -27,4 +27,4 @@
 	url = ../esp32-warm-water-frontend.git
 [submodule "components/esp32-webserver"]
 	path = components/esp32-webserver
-	url = git@github.com:wolffshots/esp32-webserver.git
+	url = ../esp32-webserver.git

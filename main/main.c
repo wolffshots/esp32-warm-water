@@ -46,6 +46,7 @@
     ESP_LOGD - debug
     ESP_LOGV - verbose (highest)
 */
+
 #include <stdio.h>                   // esp packaged standard io library
 #include <stdbool.h>                 // booleans
 #include "sdkconfig.h"               // the generated configuration variables
@@ -62,17 +63,19 @@
 #include "ds18b20_wrapper.h"         // for setting up and interfacing with the temp sensor via owb
 #include "timer.h"                   // wrappers for setting up high resolution timers
 #include "ssd1306.h"
+#include "symbols.h"
 #include "esp_log.h"
 #include "control.h"
 #include "spiffs.h"
-
-int num_sensors = 0;                     ///< the number of sensors ds18b20 init has found (initially 0)
-esp_timer_handle_t periodic_check_timer; ///< variable to control the timer associated with running the temperature polling to check system
-
 volatile float goal = CONFIG_INITIAL_GOAL_TEMP; ///< goal temp for the system to aim for
+volatile float temp = 0.0f;                     ///< current temp
 volatile float under = 0.5f;                    ///< margin below goal temp at which to turn relay on
 volatile float over = 0.5f;                     ///< margin above goal temp at which to turn relay off
 volatile bool heating = false;                  ///< whether or not the system should be outputing a signal to enable the relay (note: could be used to control pump as well)
+#include "webserver.h"                          // webserver import must come after volatiles because it interacts with them
+
+int num_sensors = 0;                     ///< the number of sensors ds18b20 init has found (initially 0)
+esp_timer_handle_t periodic_check_timer; ///< variable to control the timer associated with running the temperature polling to check system
 
 SSD1306_t dev; ///< device for oled
 // char lineChar[20];
@@ -96,6 +99,15 @@ void check_system_handler(void *arg)
     {                                                                             //
         ESP_LOGI(TAG, "%d: %.3f - %lld us", i, results[i], esp_timer_get_time()); // log result out
     }                                                                             // this will probably be phased out once relay control is implemented
+    char line[16];
+    sprintf(line, "goal: %2.3f C", goal);
+    ssd1306_wrapped_display_text(&dev, 2, line);
+    ssd1306_display_image(&dev, 2, 12*8, degree_symbol, 8);
+    sprintf(line, "temp: %2.3f C", results[0]);
+    ssd1306_wrapped_display_text(&dev, 3, line);
+    ssd1306_display_image(&dev, 3, 12*8, degree_symbol, 8);
+    sprintf(line, "heating: %s", heating ? "true" : "false");
+    ssd1306_wrapped_display_text(&dev, 4, line);
 }
 /**
  * check if a change in the relay's operation is necessary and perform it if so
@@ -131,6 +143,7 @@ void app_deinit(void)
     ds18b20_wrapped_deinit();                   ///< deallocate owb and ds18b20
     ssd1306_deinit(&dev);                       ///< deallocate i2c and ssd1306
     wifi_shared_deinit();                       ///< wifi off and deinit
+    spiffs_deinit();                            ///< disable spiffs
     fflush(stdout);
 }
 
@@ -152,17 +165,23 @@ void app_main(void)
 
     general_timer_init(periodic_check_timer, check_system_handler, true, CONFIG_CONTROL_INTERVAL, "check_system_handler");
 
-    ssd1306_init(&dev);
-    ssd1306_wrapped_display_text(&dev, 0, "0123456789012345");
-    ssd1306_wrapped_display_text(&dev, 1, "abcdefghijklmnop");
-    ssd1306_wrapped_display_text(&dev, 2, "qrstuvwxyzABCDEF");
-    ssd1306_wrapped_display_text(&dev, 3, "GHIJKLMNOPQRSTUV");
-    ssd1306_wrapped_display_text(&dev, 4, "WXYZ!@#$^&*()_+-");
-    ssd1306_wrapped_display_text(&dev, 5, "=`~;':\",./<>?\\|");
-    ssd1306_wrapped_display_text(&dev, 6, "wrapped");
-    ssd1306_wrapped_display_text(&dev, 7, "wrapped");
-
     spiffs_init();
+
+    ssd1306_init(&dev);
+
+    ssd1306_clear_screen(&dev, false);
+    ssd1306_wrapped_display_text(&dev, 0, "warm water :)");
+
+    // ssd1306_wrapped_display_text(&dev, 3, "GHIJKLMNOPQRSTUV");
+    // ssd1306_wrapped_display_text(&dev, 4, "WXYZ!@#$^&*()_+-");
+    // ssd1306_wrapped_display_text(&dev, 5, "=`~;':\",./<>?\\|");
+    // ssd1306_wrapped_display_text(&dev, 6, "0123456789012345");
+    // ssd1306_wrapped_display_text(&dev, 7, "0123456789012345");
+    // ssd1306_hardware_scroll(&dev, SCROLL_LEFT);
+
+    // ssd1306_hardware_scroll_line(&dev, 0, SCROLL_LEFT);
+
+    ESP_ERROR_CHECK(start_file_server("/spiffs"));
 
     led_on();
 }
