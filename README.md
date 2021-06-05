@@ -1,6 +1,5 @@
 # warm water in esp-idf
 [![Platform: ESP-IDF](https://img.shields.io/badge/ESP--IDF-v4.2%2B-blue.svg)](https://docs.espressif.com/projects/esp-idf/en/stable/get-started/)
-<!-- [![couldn't get build status](https://api.travis-ci.com/wolffshots/esp32-warm-water.svg?branch=main "Current doc build status")](https://wolffshots.github.io/esp32-warm-water/index.html) -->
 ![GitHub Docs Workflow Status](https://img.shields.io/github/workflow/status/wolffshots/esp32-warm-water/doxygen?label=doxygen)
 ![GitHub CodeQL Workflow Status](https://img.shields.io/github/workflow/status/wolffshots/esp32-warm-water/codeql?label=codeql/build)
 ![GitHub](https://img.shields.io/github/license/wolffshots/esp32-warm-water)
