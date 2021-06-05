@@ -1,0 +1,38 @@
+name: "doxygen"
+
+on:
+  push:
+    branches: [ main ]
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+       
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        submodules: 'recursive'
+
+    - name: get specific doxygen
+      run:  sudo apt-get update && 
+            sudo apt install -y graphviz &&
+            sudo apt install -y libclang1-9 libclang1-9 libllvm9 &&
+            sudo apt install -y libclang-cpp9 &&
+            wget -c https://doxygen.nl/files/doxygen-1.9.1.linux.bin.tar.gz -O - | tar -xz &&
+            cd doxygen-1.9.1/ &&
+            sudo make install &&
+            cd .. &&
+            rm -fr doxygen-1.9.1 # crucial so it doesn't document itself
+    - name: build docs
+      run:  cd doc
+            doxygen
+    - name: deploy docs to gh pages 🚀
+      uses: JamesIves/github-pages-deploy-action@4.1.4
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: doc # The folder the action should deploy.
