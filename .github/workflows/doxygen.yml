@@ -24,7 +24,7 @@ jobs:
       - name: build docs
         run:  cd doc &&
               doxygen &&
-              ll &&
+              ls &&
               cd ..
       - name: deploy docs to gh pages 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
