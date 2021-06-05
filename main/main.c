@@ -47,10 +47,11 @@
     ESP_LOGV - verbose (highest)
 */
 
-#include <stdio.h>                   // esp packaged standard io library
-#include <stdbool.h>                 // booleans
-#include "sdkconfig.h"               // the generated configuration variables
-#include "led.h"                     // led module
+#include <stdio.h>     // esp packaged standard io library
+#include <stdbool.h>   // booleans
+#include "sdkconfig.h" // the generated configuration variables
+#include "led.h"       // led module
+char ip_address[16];
 #ifdef CONFIG_ESP_ENABLE_WIFI        // check if wifi is enabled in sdkconfig
 #ifdef CONFIG_ESP_ENABLE_WIFI_STA    // check if station mode is enabled
 #include "wifi_sta.h"                // include station header if so
@@ -82,6 +83,31 @@ SSD1306_t dev; ///< device for oled
 
 static const char *TAG = "esp32-warm-water";
 
+void update_display(void)
+{
+    char line[20];
+    char position = 0;
+    sprintf(line, " goal: %0.1f", goal);
+    position = strlen(line);
+    sprintf(line, " goal: %0.1f C", goal);
+    ssd1306_wrapped_display_text(&dev, 2, line);
+    ssd1306_display_image(&dev, 2, position * 8, degree_symbol, 8);
+    sprintf(line, "  %1.1f      %1.1f  ", under, over);
+    ssd1306_wrapped_display_text(&dev, 3, line);
+    ssd1306_display_image(&dev, 3, 6 * 8, down_arrow, 8);
+    ssd1306_display_image(&dev, 3, 9 * 8, up_arrow, 8);
+    sprintf(line, " temp: %0.3f C", temp);
+    ssd1306_wrapped_display_text(&dev, 5, line);
+    sprintf(line, " temp: %0.3f", goal);
+    position = strlen(line);
+    ssd1306_display_image(&dev, 5, position * 8, degree_symbol, 8);
+    sprintf(line, " %s", ip_address);
+    ssd1306_wrapped_display_text(&dev, 6, line);
+    ssd1306_wrapped_display_text(&dev, 7, " mode:");
+    position = strlen(" mode: ");
+    ssd1306_display_image(&dev, 7, position * 8, heating ? fire_symbol : snowflake_symbol, 8);
+}
+
 /**
  * polls the ds18b20 sensor for it's latest temperatures and 
  * checks what range we are in with respect to the goal and
@@ -99,15 +125,8 @@ void check_system_handler(void *arg)
     {                                                                             //
         ESP_LOGI(TAG, "%d: %.3f - %lld us", i, results[i], esp_timer_get_time()); // log result out
     }                                                                             // this will probably be phased out once relay control is implemented
-    char line[16];
-    sprintf(line, "goal: %2.3f C", goal);
-    ssd1306_wrapped_display_text(&dev, 2, line);
-    ssd1306_display_image(&dev, 2, 12*8, degree_symbol, 8);
-    sprintf(line, "temp: %2.3f C", results[0]);
-    ssd1306_wrapped_display_text(&dev, 3, line);
-    ssd1306_display_image(&dev, 3, 12*8, degree_symbol, 8);
-    sprintf(line, "heating: %s", heating ? "true" : "false");
-    ssd1306_wrapped_display_text(&dev, 4, line);
+    temp = results[0];
+    update_display();
 }
 /**
  * check if a change in the relay's operation is necessary and perform it if so
@@ -170,16 +189,7 @@ void app_main(void)
     ssd1306_init(&dev);
 
     ssd1306_clear_screen(&dev, false);
-    ssd1306_wrapped_display_text(&dev, 0, "warm water :)");
-
-    // ssd1306_wrapped_display_text(&dev, 3, "GHIJKLMNOPQRSTUV");
-    // ssd1306_wrapped_display_text(&dev, 4, "WXYZ!@#$^&*()_+-");
-    // ssd1306_wrapped_display_text(&dev, 5, "=`~;':\",./<>?\\|");
-    // ssd1306_wrapped_display_text(&dev, 6, "0123456789012345");
-    // ssd1306_wrapped_display_text(&dev, 7, "0123456789012345");
-    // ssd1306_hardware_scroll(&dev, SCROLL_LEFT);
-
-    // ssd1306_hardware_scroll_line(&dev, 0, SCROLL_LEFT);
+    ssd1306_wrapped_display_text(&dev, 0, " warm water :)");
 
     ESP_ERROR_CHECK(start_file_server("/spiffs"));
 
