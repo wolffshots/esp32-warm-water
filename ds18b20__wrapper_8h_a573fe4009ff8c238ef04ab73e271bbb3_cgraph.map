@@ -1,0 +1,5 @@
+<map id="ds18b20_wrapped_deinit" name="ds18b20_wrapped_deinit">
+<area shape="rect" id="node1" title="deinit the sensor cleans up and frees all of the devices and the onewire bus" alt="" coords="5,31,189,57"/>
+<area shape="rect" id="node2" href="$ds18b20_8c.html#a5bcd6ceb76caa4add04ca65582eede00" title="Delete an existing device info instance." alt="" coords="246,5,357,32"/>
+<area shape="rect" id="node3" href="$owb_8h.html#a678f635f92fecc350a75d3db9b8d0f41" title="call to release resources after completing use of the OneWireBus" alt="" coords="237,56,365,83"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="ds18b20_convert_all" name="ds18b20_convert_all">
+<area shape="rect" id="node1" title="Start temperature conversion on all connected devices." alt="" coords="603,31,759,57"/>
+<area shape="rect" id="node2" href="$ds18b20__wrapper_8c.html#a8dc5df50a071d5b9863e2f1e01db4ee1" title="capture temps to results this function runs conversion on all the owb devices, waits for conversion t..." alt="" coords="359,5,555,32"/>
+<area shape="rect" id="node5" href="$ds18b20__wrapper_8c.html#a2e509fac4d3c42a3acc7773d9bc43b7e" title="print the temps runs conversion on all the owb devices, waits for the conversion and then prints out ..." alt="" coords="369,56,545,83"/>
+<area shape="rect" id="node3" href="$control_8h.html#ae4a121c8d14cdd4314309474866e8492" title=" " alt="" coords="140,5,311,32"/>
+<area shape="rect" id="node4" href="$main_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70" title=" " alt="" coords="5,5,92,32"/>
+</map>

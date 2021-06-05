@@ -1,0 +1,7 @@
+<map id="/home/runner/work/esp32&#45;warm&#45;water/esp32&#45;warm&#45;water/components/esp32&#45;ssd1306/include/ssd1306.h" name="/home/runner/work/esp32&#45;warm&#45;water/esp32&#45;warm&#45;water/components/esp32&#45;ssd1306/include/ssd1306.h">
+<area shape="rect" id="node1" title="defininitions for setting up, interacting with and sending commands to an ssd1306 driven screen via i..." alt="" coords="321,5,523,76"/>
+<area shape="rect" id="node2" href="$ssd1306_8c.html" title="implementations of functions for setting up, interacting with and sending commands to an ssd1306 driv..." alt="" coords="5,124,196,195"/>
+<area shape="rect" id="node3" href="$ssd1306__i2c_8c.html" title="implementations of functions for setting up, interacting with and sending commands to an ssd1306 driv..." alt="" coords="220,124,411,195"/>
+<area shape="rect" id="node4" href="$ssd1306__spi_8c.html" title="implementations of functions for setting up, interacting with and sending commands to an ssd1306 driv..." alt="" coords="435,124,625,195"/>
+<area shape="rect" id="node5" href="$main_8c.html" title="main entrypoint for the warm&#45;water project" alt="" coords="649,131,840,187"/>
+</map>

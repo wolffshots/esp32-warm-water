@@ -1,0 +1,19 @@
+<map id="ssd1306_init" name="ssd1306_init">
+<area shape="rect" id="node1" title=" " alt="" coords="5,132,109,159"/>
+<area shape="rect" id="node2" href="$ssd1306_8h.html#abe5d240b79979de6f3a3dca603585d53" title=" " alt="" coords="205,5,275,32"/>
+<area shape="rect" id="node3" href="$ssd1306_8h.html#a5e6e82c7a15abfd65e6b315ba2bcf3c4" title=" " alt="" coords="179,56,301,83"/>
+<area shape="rect" id="node4" href="$ssd1306_8h.html#a8f5fddd4ab7905d6352f36f2d634d87c" title=" " alt="" coords="417,259,487,285"/>
+<area shape="rect" id="node6" href="$ssd1306_8h.html#a6f40a48b5ee72bca0b30ef7b1527fee6" title=" " alt="" coords="179,157,301,184"/>
+<area shape="rect" id="node7" href="$ssd1306_8c.html#afa49ef46342acf47f30b0c18f81d3a6d" title=" " alt="" coords="157,107,323,133"/>
+<area shape="rect" id="node15" href="$ssd1306_8c.html#a03aa81786a88a0d4f0683c6df0d94c24" title=" " alt="" coords="172,208,308,235"/>
+<area shape="rect" id="node5" href="$ssd1306__spi_8c.html#a7dc4fb23f9c6a0040a23cfe04114f64b" title=" " alt="" coords="772,208,979,235"/>
+<area shape="rect" id="node8" href="$ssd1306_8c.html#af0960057b256a13806c403139d5914cb" title=" " alt="" coords="371,107,533,133"/>
+<area shape="rect" id="node9" href="$ssd1306_8h.html#addac480b437bcbb3922f4db456f5c0ae" title=" " alt="" coords="581,107,724,133"/>
+<area shape="rect" id="node10" href="$ssd1306_8h.html#a6e9a2830333a50084a5e25d8a5f1ed12" title=" " alt="" coords="581,157,724,184"/>
+<area shape="rect" id="node12" href="$ssd1306_8c.html#a82fc3f186b1ba680589b346162c3ea50" title=" " alt="" coords="601,5,704,32"/>
+<area shape="rect" id="node14" href="$ssd1306_8c.html#aacf787f9356e0496d5f1ab0622136f22" title=" " alt="" coords="592,56,713,83"/>
+<area shape="rect" id="node11" href="$ssd1306__spi_8c.html#a786fed960d7c4f5cbd99cfdb59217992" title=" " alt="" coords="790,157,961,184"/>
+<area shape="rect" id="node13" href="$ssd1306_8c.html#a8cc5b8c731a7ec2814d66e6ffe53b407" title=" " alt="" coords="814,5,937,32"/>
+<area shape="rect" id="node16" href="$ssd1306_8h.html#a40e42e34e32f5897330b22545fc5b5e7" title=" " alt="" coords="401,208,503,235"/>
+<area shape="rect" id="node17" href="$ssd1306_8h.html#ac1d5899dc81fae01ace541c54a0677a4" title=" " alt="" coords="401,157,503,184"/>
+</map>
