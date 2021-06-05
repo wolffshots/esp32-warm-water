@@ -1,6 +1,12 @@
 # warm water in esp-idf
-Docs: [![couldn't get build status](https://api.travis-ci.com/wolffshots/esp32-warm-water.svg?branch=main "Current doc build status")](https://wolffshots.github.io/esp32-warm-water/index.html)
-CodeQL: [![CodeQL](https://github.com/wolffshots/esp32-warm-water/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/wolffshots/esp32-warm-water/actions/workflows/codeql-analysis.yml)
+[![Platform: ESP-IDF](https://img.shields.io/badge/ESP--IDF-v4.2%2B-blue.svg)](https://docs.espressif.com/projects/esp-idf/en/stable/get-started/)
+[![couldn't get build status](https://api.travis-ci.com/wolffshots/esp32-warm-water.svg?branch=main "Current doc build status")](https://wolffshots.github.io/esp32-warm-water/index.html)
+[![CodeQL](https://github.com/wolffshots/esp32-warm-water/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/wolffshots/esp32-warm-water/actions/workflows/codeql-analysis.yml)
+![GitHub](https://img.shields.io/github/license/wolffshots/esp32-warm-water)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/wolffshots/esp32-warm-water)
+![GitHub repo size](https://img.shields.io/github/repo-size/wolffshots/esp32-warm-water)
+![Lines of code](https://img.shields.io/tokei/lines/github/wolffshots/esp32-warm-water)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/wolffshots/esp32-warm-water)
 
 esp-idf implementation of temperature controlled relay to switch a heating element to maintain water in a specific temperature range.
 A webserver is used to interface with the system and change the goal temperature, range from the goal and the relay state (forced on or off).
