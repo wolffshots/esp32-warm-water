@@ -1,7 +1,0 @@
-<map id="ssd1306_fadeout" name="ssd1306_fadeout">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,139,57"/>
-<area shape="rect" id="node2" href="$ssd1306_8h.html#addac480b437bcbb3922f4db456f5c0ae" title=" " alt="" coords="187,5,329,32"/>
-<area shape="rect" id="node3" href="$ssd1306_8h.html#a6e9a2830333a50084a5e25d8a5f1ed12" title=" " alt="" coords="187,56,329,83"/>
-<area shape="rect" id="node4" href="$ssd1306__spi_8c.html#a7dc4fb23f9c6a0040a23cfe04114f64b" title=" " alt="" coords="377,31,584,57"/>
-<area shape="rect" id="node5" href="$ssd1306__spi_8c.html#a786fed960d7c4f5cbd99cfdb59217992" title=" " alt="" coords="395,81,566,108"/>
-</map>

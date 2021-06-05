@@ -1,9 +1,0 @@
-<map id="ds18b20_wrapped_capture" name="ds18b20_wrapped_capture">
-<area shape="rect" id="node1" title="capture temps to results this function runs conversion on all the owb devices, waits for conversion t..." alt="" coords="5,107,201,133"/>
-<area shape="rect" id="node2" href="$ds18b20_8c.html#ad1d5ef99f9be1eb8bf72b793a71fa259" title="Start temperature conversion on all connected devices." alt="" coords="279,56,435,83"/>
-<area shape="rect" id="node6" href="$ds18b20_8c.html#a7f254ca1bc00a2f2a44389c185bdc9b0" title="Read last temperature measurement from device." alt="" coords="279,107,434,133"/>
-<area shape="rect" id="node7" href="$ds18b20_8c.html#a76ac59caf970799cedc280d8bc89e020" title="Wait for the maximum conversion time according to the current resolution of the device...." alt="" coords="249,157,464,184"/>
-<area shape="rect" id="node3" href="$owb_8h.html#aebb68ac7822f5dd25256a7abd0172b04" title="Reset the 1&#45;Wire bus." alt="" coords="553,5,642,32"/>
-<area shape="rect" id="node4" href="$owb_8h.html#a04c0fed938b11fa38fb8f03124d96d4b" title="Enable or disable the strong&#45;pullup GPIO, if configured." alt="" coords="512,56,683,83"/>
-<area shape="rect" id="node5" href="$owb_8h.html#aa49c4108d30dc155e5bfcfad33d289fe" title="Write a single byte to the 1&#45;Wire bus." alt="" coords="535,107,660,133"/>
-</map>

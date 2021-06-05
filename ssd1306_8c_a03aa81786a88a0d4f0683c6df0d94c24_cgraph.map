@@ -1,6 +1,0 @@
-<map id="ssd1306_contrast" name="ssd1306_contrast">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,141,57"/>
-<area shape="rect" id="node2" href="$ssd1306_8h.html#a40e42e34e32f5897330b22545fc5b5e7" title=" " alt="" coords="189,5,291,32"/>
-<area shape="rect" id="node3" href="$ssd1306_8h.html#ac1d5899dc81fae01ace541c54a0677a4" title=" " alt="" coords="189,56,291,83"/>
-<area shape="rect" id="node4" href="$ssd1306__spi_8c.html#a7dc4fb23f9c6a0040a23cfe04114f64b" title=" " alt="" coords="339,56,545,83"/>
-</map>

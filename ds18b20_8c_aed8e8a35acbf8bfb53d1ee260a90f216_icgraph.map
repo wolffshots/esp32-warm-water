@@ -1,5 +1,0 @@
-<map id="ds18b20_malloc" name="ds18b20_malloc">
-<area shape="rect" id="node1" title="Construct a new device info instance. New instance should be initialised before calling other functio..." alt="" coords="356,5,484,32"/>
-<area shape="rect" id="node2" href="$ds18b20__wrapper_8c.html#a9b4c3d83bff4cd65339b5c5b8b160535" title="init the sensor intitialises the onewire bus and finds and intialises ds18b20 sensors along the pin" alt="" coords="140,5,308,32"/>
-<area shape="rect" id="node3" href="$main_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70" title=" " alt="" coords="5,5,92,32"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="OneWireBus_SearchState" name="OneWireBus_SearchState">
-<area shape="rect" id="node1" title="Represents the state of a device search on the 1&#45;Wire bus." alt="" coords="5,184,192,211"/>
-<area shape="rect" id="node2" href="$union_one_wire_bus___r_o_m_code.html" title="Represents a 1&#45;Wire ROM Code. This is a sequence of eight bytes, where the first byte is the family n..." alt="" coords="12,95,185,121"/>
-<area shape="rect" id="node3" href="$struct_one_wire_bus___r_o_m_code_1_1fields.html" title="Provides access via field names." alt="" coords="70,5,127,32"/>
-</map>

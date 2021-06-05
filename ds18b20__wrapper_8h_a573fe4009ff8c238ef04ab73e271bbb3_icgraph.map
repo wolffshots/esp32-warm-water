@@ -1,4 +1,0 @@
-<map id="ds18b20_wrapped_deinit" name="ds18b20_wrapped_deinit">
-<area shape="rect" id="node1" title="deinit the sensor cleans up and frees all of the devices and the onewire bus" alt="" coords="144,5,328,32"/>
-<area shape="rect" id="node2" href="$main_8c.html#a1280ca1a2ca0a90036534adce7260156" title=" " alt="" coords="5,5,96,32"/>
-</map>

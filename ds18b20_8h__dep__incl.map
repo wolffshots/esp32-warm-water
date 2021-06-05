@@ -1,5 +1,0 @@
-<map id="/home/travis/build/wolffshots/esp32&#45;warm&#45;water/components/esp32&#45;ds18b20/include/ds18b20.h" name="/home/travis/build/wolffshots/esp32&#45;warm&#45;water/components/esp32&#45;ds18b20/include/ds18b20.h">
-<area shape="rect" id="node1" title="Interface definitions for the Maxim Integrated DS18B20 Programmable Resolution 1&#45;Wire Digital Thermom..." alt="" coords="111,5,315,76"/>
-<area shape="rect" id="node2" href="$ds18b20_8c.html" title=" " alt="" coords="5,124,196,195"/>
-<area shape="rect" id="node3" href="$ds18b20__wrapper_8c.html" title="implementation for wrapper component to help setup and interface with temp sensor" alt="" coords="221,124,431,195"/>
-</map>

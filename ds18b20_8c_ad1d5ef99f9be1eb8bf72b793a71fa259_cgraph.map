@@ -1,6 +1,0 @@
-<map id="ds18b20_convert_all" name="ds18b20_convert_all">
-<area shape="rect" id="node1" title="Start temperature conversion on all connected devices." alt="" coords="5,56,161,83"/>
-<area shape="rect" id="node2" href="$owb_8h.html#aebb68ac7822f5dd25256a7abd0172b04" title="Reset the 1&#45;Wire bus." alt="" coords="250,5,339,32"/>
-<area shape="rect" id="node3" href="$owb_8h.html#a04c0fed938b11fa38fb8f03124d96d4b" title="Enable or disable the strong&#45;pullup GPIO, if configured." alt="" coords="209,56,380,83"/>
-<area shape="rect" id="node4" href="$owb_8h.html#aa49c4108d30dc155e5bfcfad33d289fe" title="Write a single byte to the 1&#45;Wire bus." alt="" coords="232,107,357,133"/>
-</map>
