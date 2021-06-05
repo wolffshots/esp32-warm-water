@@ -1,0 +1,7 @@
+<map id="DS18B20_Info" name="DS18B20_Info">
+<area shape="rect" id="node1" title="Structure containing information related to a single DS18B20 device connected via a 1&#45;Wire bus." alt="" coords="115,184,229,211"/>
+<area shape="rect" id="node2" href="$union_one_wire_bus___r_o_m_code.html" title="Represents a 1&#45;Wire ROM Code. This is a sequence of eight bytes, where the first byte is the family n..." alt="" coords="5,95,179,121"/>
+<area shape="rect" id="node3" href="$struct_one_wire_bus___r_o_m_code_1_1fields.html" title="Provides access via field names." alt="" coords="63,5,121,32"/>
+<area shape="rect" id="node4" href="$struct_one_wire_bus.html" title="Structure containing 1&#45;Wire bus information relevant to a single instance." alt="" coords="203,95,306,121"/>
+<area shape="rect" id="node5" href="$structowb__driver.html" title=" " alt="" coords="207,5,302,32"/>
+</map>

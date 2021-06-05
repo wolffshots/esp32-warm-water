@@ -1,0 +1,6 @@
+<map id="ssd1306_hardware_scroll_line" name="ssd1306_hardware_scroll_line">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,223,57"/>
+<area shape="rect" id="node2" href="$ssd1306_8h.html#ac7803a8e239ac5fc499fbe31b517228b" title=" " alt="" coords="271,5,453,32"/>
+<area shape="rect" id="node3" href="$ssd1306_8h.html#a887e40ae707bbf312673d760f2d6bab5" title=" " alt="" coords="271,56,453,83"/>
+<area shape="rect" id="node4" href="$ssd1306__spi_8c.html#a7dc4fb23f9c6a0040a23cfe04114f64b" title=" " alt="" coords="501,56,708,83"/>
+</map>

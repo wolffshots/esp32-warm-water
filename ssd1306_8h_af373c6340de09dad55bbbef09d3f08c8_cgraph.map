@@ -1,0 +1,12 @@
+<map id="ssd1306_scroll_clear" name="ssd1306_scroll_clear">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,163,108"/>
+<area shape="rect" id="node2" href="$ssd1306_8c.html#acf2ba9b3767f2aa4b083eab6bbef4005" title=" " alt="" coords="211,81,357,108"/>
+<area shape="rect" id="node3" href="$ssd1306_8c.html#af0960057b256a13806c403139d5914cb" title=" " alt="" coords="405,81,568,108"/>
+<area shape="rect" id="node4" href="$ssd1306_8h.html#addac480b437bcbb3922f4db456f5c0ae" title=" " alt="" coords="616,5,759,32"/>
+<area shape="rect" id="node5" href="$ssd1306_8h.html#a6e9a2830333a50084a5e25d8a5f1ed12" title=" " alt="" coords="616,56,759,83"/>
+<area shape="rect" id="node8" href="$ssd1306_8c.html#a82fc3f186b1ba680589b346162c3ea50" title=" " alt="" coords="636,107,739,133"/>
+<area shape="rect" id="node10" href="$ssd1306_8c.html#aacf787f9356e0496d5f1ab0622136f22" title=" " alt="" coords="627,157,748,184"/>
+<area shape="rect" id="node6" href="$ssd1306__spi_8c.html#a7dc4fb23f9c6a0040a23cfe04114f64b" title=" " alt="" coords="807,5,1013,32"/>
+<area shape="rect" id="node7" href="$ssd1306__spi_8c.html#a786fed960d7c4f5cbd99cfdb59217992" title=" " alt="" coords="825,56,995,83"/>
+<area shape="rect" id="node9" href="$ssd1306_8c.html#a8cc5b8c731a7ec2814d66e6ffe53b407" title=" " alt="" coords="849,107,971,133"/>
+</map>

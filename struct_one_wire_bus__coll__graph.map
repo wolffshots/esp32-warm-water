@@ -1,0 +1,4 @@
+<map id="OneWireBus" name="OneWireBus">
+<area shape="rect" id="node1" title="Structure containing 1&#45;Wire bus information relevant to a single instance." alt="" coords="5,95,108,121"/>
+<area shape="rect" id="node2" href="$structowb__driver.html" title=" " alt="" coords="9,5,104,32"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="/home/travis/build/wolffshots/esp32&#45;warm&#45;water/components/esp32&#45;ssd1306/ssd1306_i2c.c" name="/home/travis/build/wolffshots/esp32&#45;warm&#45;water/components/esp32&#45;ssd1306/ssd1306_i2c.c">
+<area shape="rect" id="node1" title="implementations of functions for setting up, interacting with and sending commands to an ssd1306 driv..." alt="" coords="304,5,495,76"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,124,76,151"/>
+<area shape="rect" id="node3" title=" " alt="" coords="100,124,251,151"/>
+<area shape="rect" id="node4" title=" " alt="" coords="275,124,393,151"/>
+<area shape="rect" id="node5" title=" " alt="" coords="417,124,512,151"/>
+<area shape="rect" id="node6" title=" " alt="" coords="536,124,620,151"/>
+<area shape="rect" id="node7" href="$ssd1306_8h.html" title="defininitions for setting up, interacting with and sending commands to an ssd1306 driven screen via i..." alt="" coords="645,124,733,151"/>
+<area shape="rect" id="node8" title=" " alt="" coords="615,199,762,225"/>
+</map>

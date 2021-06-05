@@ -1,0 +1,11 @@
+<map id="app_deinit" name="app_deinit">
+<area shape="rect" id="node1" title=" " alt="" coords="5,157,96,184"/>
+<area shape="rect" id="node2" href="$ds18b20__wrapper_8c.html#a573fe4009ff8c238ef04ab73e271bbb3" title="deinit the sensor cleans up and frees all of the devices and the onewire bus" alt="" coords="144,31,328,57"/>
+<area shape="rect" id="node5" href="$timer_8h.html#a60e6a109a5c7d31ddabe4964f273fef6" title=" " alt="" coords="157,81,315,108"/>
+<area shape="rect" id="node6" href="$control_8h.html#af3870b0503628213b5e2f6b1e6517a3e" title=" " alt="" coords="187,132,285,159"/>
+<area shape="rect" id="node7" href="$spiffs_8h.html#aaaa13cba0879d17c90a3d5841c07ac18" title=" " alt="" coords="185,183,287,209"/>
+<area shape="rect" id="node8" href="$ssd1306_8h.html#a4a30befbb32cc9583905f371c5d3bb8d" title=" " alt="" coords="176,233,296,260"/>
+<area shape="rect" id="node9" href="$wifi__shared_8h.html#a1a0ebdaeffaf1b93741dedbeb6459b45" title=" " alt="" coords="166,284,306,311"/>
+<area shape="rect" id="node3" href="$ds18b20_8c.html#a5bcd6ceb76caa4add04ca65582eede00" title="Delete an existing device info instance." alt="" coords="385,5,495,32"/>
+<area shape="rect" id="node4" href="$owb_8h.html#a678f635f92fecc350a75d3db9b8d0f41" title="call to release resources after completing use of the OneWireBus" alt="" coords="376,56,504,83"/>
+</map>

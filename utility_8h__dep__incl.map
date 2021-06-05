@@ -1,0 +1,6 @@
+<map id="/home/travis/build/wolffshots/esp32&#45;warm&#45;water/components/esp32&#45;utility/include/utility.h" name="/home/travis/build/wolffshots/esp32&#45;warm&#45;water/components/esp32&#45;utility/include/utility.h">
+<area shape="rect" id="node1" title="defininitions for simple utility functions" alt="" coords="220,5,411,76"/>
+<area shape="rect" id="node2" href="$spiffs_8c.html" title="implementations for component spiffs" alt="" coords="5,124,196,195"/>
+<area shape="rect" id="node3" href="$utility_8c.html" title="implementation for simple utility functions" alt="" coords="220,124,411,195"/>
+<area shape="rect" id="node4" href="$main_8c.html" title="main entrypoint for the warm&#45;water project" alt="" coords="435,131,614,187"/>
+</map>

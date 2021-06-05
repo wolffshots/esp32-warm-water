@@ -1,0 +1,5 @@
+<map id="/home/travis/build/wolffshots/esp32&#45;warm&#45;water/components/esp32&#45;ds18b20/include/ds18b20_wrapper.h" name="/home/travis/build/wolffshots/esp32&#45;warm&#45;water/components/esp32&#45;ds18b20/include/ds18b20_wrapper.h">
+<area shape="rect" id="node1" title="definitions for wrapper component to help setup and interface with temp sensor" alt="" coords="124,5,316,91"/>
+<area shape="rect" id="node2" href="$ds18b20__wrapper_8c.html" title="implementation for wrapper component to help setup and interface with temp sensor" alt="" coords="5,139,216,209"/>
+<area shape="rect" id="node3" href="$main_8c.html" title="main entrypoint for the warm&#45;water project" alt="" coords="240,146,419,202"/>
+</map>

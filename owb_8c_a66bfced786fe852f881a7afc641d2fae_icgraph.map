@@ -1,0 +1,6 @@
+<map id="owb_read_bit" name="owb_read_bit">
+<area shape="rect" id="node1" title="Read a single bit from the 1&#45;Wire bus." alt="" coords="611,13,720,39"/>
+<area shape="rect" id="node2" href="$ds18b20_8c.html#ad144c72353070a8b49a2f53ff118f18c" title="Check OneWire bus for presence of parasitic&#45;powered devices." alt="" coords="356,5,563,47"/>
+<area shape="rect" id="node3" href="$ds18b20__wrapper_8c.html#a9b4c3d83bff4cd65339b5c5b8b160535" title="init the sensor intitialises the onewire bus and finds and intialises ds18b20 sensors along the pin" alt="" coords="140,13,308,39"/>
+<area shape="rect" id="node4" href="$main_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70" title=" " alt="" coords="5,13,92,39"/>
+</map>
