@@ -108,6 +108,21 @@ void update_display(void)
     ssd1306_display_image(&dev, 7, position * 8, heating ? fire_symbol : snowflake_symbol, 8);
 }
 
+/** turn the relay on */
+void relay_on(void)
+{
+    gpio_set_level(CONFIG_RELAY_ONE_PIN, 0);
+    gpio_set_level(CONFIG_RELAY_TWO_PIN, 0);
+    ESP_LOGI(TAG, "relay on: setting to %d", 0);
+}
+/** turn the relay off */
+void relay_off(void)
+{
+    gpio_set_level(CONFIG_RELAY_ONE_PIN, 1);
+    gpio_set_level(CONFIG_RELAY_TWO_PIN, 1);
+    ESP_LOGI(TAG, "relay off: setting to %d", 1);
+}
+
 /**
  * polls the ds18b20 sensor for it's latest temperatures and 
  * checks what range we are in with respect to the goal and
@@ -139,11 +154,13 @@ void check_relay(float average_temp)
     {
         // turn off relay
         heating = false;
+        relay_off();
     }
     else if ((average_temp < goal - under) && !heating)
     {
         // turn on relay
         heating = true;
+        relay_on();
     }
     else
     {
@@ -177,8 +194,11 @@ void app_main(void)
 #if defined(CONFIG_ESP_ENABLE_WIFI) && defined(CONFIG_ESP_ENABLE_WIFI_SOFTAP) // check if softap mode
     wifi_init_sap();                                                          // start wifi in soft ap mode and start broadcasting ap
 #endif                                                                        // CONFIG_ESP_ENABLE_WIFI && CONFIG_ESP_ENABLE_WIFI_SOFTAP
-    led_init();                                                               // setup led gpio pin
     print_chip_info();                                                        // print the chip features and details
+
+    gpio_output(CONFIG_RELAY_ONE_PIN);
+    gpio_output(CONFIG_RELAY_TWO_PIN);
+    relay_off();
 
     num_sensors = ds18b20_wrapped_init(); // capture num sensors and init
 
