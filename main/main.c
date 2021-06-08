@@ -196,9 +196,9 @@ void app_main(void)
 #endif                                                                        // CONFIG_ESP_ENABLE_WIFI && CONFIG_ESP_ENABLE_WIFI_SOFTAP
     print_chip_info();                                                        // print the chip features and details
 
+    relay_off();
     gpio_output(CONFIG_RELAY_ONE_PIN);
     gpio_output(CONFIG_RELAY_TWO_PIN);
-    relay_off();
 
     num_sensors = ds18b20_wrapped_init(); // capture num sensors and init
 
