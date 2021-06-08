@@ -46,10 +46,12 @@
     ESP_LOGD - debug
     ESP_LOGV - verbose (highest)
 */
-#include <stdio.h>                   // esp packaged standard io library
-#include <stdbool.h>                 // booleans
-#include "sdkconfig.h"               // the generated configuration variables
-#include "led.h"                     // led module
+
+#include <stdio.h>     // esp packaged standard io library
+#include <stdbool.h>   // booleans
+#include "sdkconfig.h" // the generated configuration variables
+#include "led.h"       // led module
+char ip_address[16];
 #ifdef CONFIG_ESP_ENABLE_WIFI        // check if wifi is enabled in sdkconfig
 #ifdef CONFIG_ESP_ENABLE_WIFI_STA    // check if station mode is enabled
 #include "wifi_sta.h"                // include station header if so
@@ -62,22 +64,64 @@
 #include "ds18b20_wrapper.h"         // for setting up and interfacing with the temp sensor via owb
 #include "timer.h"                   // wrappers for setting up high resolution timers
 #include "ssd1306.h"
+#include "symbols.h"
 #include "esp_log.h"
 #include "control.h"
 #include "spiffs.h"
-
-int num_sensors = 0;                     ///< the number of sensors ds18b20 init has found (initially 0)
-esp_timer_handle_t periodic_check_timer; ///< variable to control the timer associated with running the temperature polling to check system
-
 volatile float goal = CONFIG_INITIAL_GOAL_TEMP; ///< goal temp for the system to aim for
+volatile float temp = 0.0f;                     ///< current temp
 volatile float under = 0.5f;                    ///< margin below goal temp at which to turn relay on
 volatile float over = 0.5f;                     ///< margin above goal temp at which to turn relay off
 volatile bool heating = false;                  ///< whether or not the system should be outputing a signal to enable the relay (note: could be used to control pump as well)
+#include "webserver.h"                          // webserver import must come after volatiles because it interacts with them
+
+int num_sensors = 0;                     ///< the number of sensors ds18b20 init has found (initially 0)
+esp_timer_handle_t periodic_check_timer; ///< variable to control the timer associated with running the temperature polling to check system
 
 SSD1306_t dev; ///< device for oled
 // char lineChar[20];
 
 static const char *TAG = "esp32-warm-water";
+
+void update_display(void)
+{
+    char line[20];
+    char position = 0;
+    sprintf(line, " goal: %0.1f", goal);
+    position = strlen(line);
+    sprintf(line, " goal: %0.1f C", goal);
+    ssd1306_wrapped_display_text(&dev, 2, line);
+    ssd1306_display_image(&dev, 2, position * 8, degree_symbol, 8);
+    sprintf(line, "  %1.1f      %1.1f  ", under, over);
+    ssd1306_wrapped_display_text(&dev, 3, line);
+    ssd1306_display_image(&dev, 3, 6 * 8, down_arrow, 8);
+    ssd1306_display_image(&dev, 3, 9 * 8, up_arrow, 8);
+    sprintf(line, " temp: %0.3f C", temp);
+    ssd1306_wrapped_display_text(&dev, 5, line);
+    sprintf(line, " temp: %0.3f", goal);
+    position = strlen(line);
+    ssd1306_display_image(&dev, 5, position * 8, degree_symbol, 8);
+    sprintf(line, " %s", ip_address);
+    ssd1306_wrapped_display_text(&dev, 6, line);
+    ssd1306_wrapped_display_text(&dev, 7, " mode:");
+    position = strlen(" mode: ");
+    ssd1306_display_image(&dev, 7, position * 8, heating ? fire_symbol : snowflake_symbol, 8);
+}
+
+/** turn the relay on */
+void relay_on(void)
+{
+    gpio_set_level(CONFIG_RELAY_ONE_PIN, 0);
+    gpio_set_level(CONFIG_RELAY_TWO_PIN, 0);
+    ESP_LOGI(TAG, "relay on: setting to %d", 0);
+}
+/** turn the relay off */
+void relay_off(void)
+{
+    gpio_set_level(CONFIG_RELAY_ONE_PIN, 1);
+    gpio_set_level(CONFIG_RELAY_TWO_PIN, 1);
+    ESP_LOGI(TAG, "relay off: setting to %d", 1);
+}
 
 /**
  * polls the ds18b20 sensor for it's latest temperatures and 
@@ -96,6 +140,8 @@ void check_system_handler(void *arg)
     {                                                                             //
         ESP_LOGI(TAG, "%d: %.3f - %lld us", i, results[i], esp_timer_get_time()); // log result out
     }                                                                             // this will probably be phased out once relay control is implemented
+    temp = results[0];
+    update_display();
 }
 /**
  * check if a change in the relay's operation is necessary and perform it if so
@@ -108,11 +154,13 @@ void check_relay(float average_temp)
     {
         // turn off relay
         heating = false;
+        relay_off();
     }
     else if ((average_temp < goal - under) && !heating)
     {
         // turn on relay
         heating = true;
+        relay_on();
     }
     else
     {
@@ -131,6 +179,7 @@ void app_deinit(void)
     ds18b20_wrapped_deinit();                   ///< deallocate owb and ds18b20
     ssd1306_deinit(&dev);                       ///< deallocate i2c and ssd1306
     wifi_shared_deinit();                       ///< wifi off and deinit
+    spiffs_deinit();                            ///< disable spiffs
     fflush(stdout);
 }
 
@@ -145,24 +194,24 @@ void app_main(void)
 #if defined(CONFIG_ESP_ENABLE_WIFI) && defined(CONFIG_ESP_ENABLE_WIFI_SOFTAP) // check if softap mode
     wifi_init_sap();                                                          // start wifi in soft ap mode and start broadcasting ap
 #endif                                                                        // CONFIG_ESP_ENABLE_WIFI && CONFIG_ESP_ENABLE_WIFI_SOFTAP
-    led_init();                                                               // setup led gpio pin
     print_chip_info();                                                        // print the chip features and details
+
+    relay_off();
+    gpio_output(CONFIG_RELAY_ONE_PIN);
+    gpio_output(CONFIG_RELAY_TWO_PIN);
 
     num_sensors = ds18b20_wrapped_init(); // capture num sensors and init
 
     general_timer_init(periodic_check_timer, check_system_handler, true, CONFIG_CONTROL_INTERVAL, "check_system_handler");
 
-    ssd1306_init(&dev);
-    ssd1306_wrapped_display_text(&dev, 0, "0123456789012345");
-    ssd1306_wrapped_display_text(&dev, 1, "abcdefghijklmnop");
-    ssd1306_wrapped_display_text(&dev, 2, "qrstuvwxyzABCDEF");
-    ssd1306_wrapped_display_text(&dev, 3, "GHIJKLMNOPQRSTUV");
-    ssd1306_wrapped_display_text(&dev, 4, "WXYZ!@#$^&*()_+-");
-    ssd1306_wrapped_display_text(&dev, 5, "=`~;':\",./<>?\\|");
-    ssd1306_wrapped_display_text(&dev, 6, "wrapped");
-    ssd1306_wrapped_display_text(&dev, 7, "wrapped");
-
     spiffs_init();
+
+    ssd1306_init(&dev);
+
+    ssd1306_clear_screen(&dev, false);
+    ssd1306_wrapped_display_text(&dev, 0, " warm water :)");
+
+    ESP_ERROR_CHECK(start_file_server("/spiffs"));
 
     led_on();
 }
