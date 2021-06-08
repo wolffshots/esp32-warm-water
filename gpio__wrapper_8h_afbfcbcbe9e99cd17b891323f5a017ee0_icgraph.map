@@ -1,5 +1,5 @@
 <map id="gpio_output" name="gpio_output">
-<area shape="rect" id="node1" title=" " alt="" coords="259,5,357,32"/>
-<area shape="rect" id="node2" href="$led_8h.html#a7eb4d382bdd4b42c57dbb7154d03ac66" title=" " alt="" coords="140,5,211,32"/>
-<area shape="rect" id="node3" href="$main_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70" title=" " alt="" coords="5,5,92,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="140,31,239,57"/>
+<area shape="rect" id="node2" href="$main_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70" title=" " alt="" coords="5,5,92,32"/>
+<area shape="rect" id="node3" href="$led_8h.html#a7eb4d382bdd4b42c57dbb7154d03ac66" title=" " alt="" coords="13,56,84,83"/>
 </map>

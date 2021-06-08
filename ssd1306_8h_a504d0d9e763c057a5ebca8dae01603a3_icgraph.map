@@ -1,5 +1,6 @@
 <map id="ssd1306_wrapped_display_text" name="ssd1306_wrapped_display_text">
-<area shape="rect" id="node1" title=" " alt="" coords="359,5,585,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="528,5,755,32"/>
 <area shape="rect" id="node2" href="$main_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70" title=" " alt="" coords="5,5,92,32"/>
-<area shape="rect" id="node3" href="$control_8h.html#ae4a121c8d14cdd4314309474866e8492" title=" " alt="" coords="140,31,311,57"/>
+<area shape="rect" id="node3" href="$webserver_8h.html#ac57966e6d883ddf6cd64302148052921" title=" " alt="" coords="359,31,480,57"/>
+<area shape="rect" id="node4" href="$control_8h.html#ae4a121c8d14cdd4314309474866e8492" title=" " alt="" coords="140,31,311,57"/>
 </map>

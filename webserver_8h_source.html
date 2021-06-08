@@ -98,27 +98,37 @@ $(function() {
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define COMPONENT_TEMPLATE_H</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// __cplusplus</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// includes pertinent to this file</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;esp_err.h&quot;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;esp_http_server.h&quot;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// defines</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="webserver_8h.html#a3b0a278c8fbd714fb54b7ba86899c406">   42</a></span>&#160;<span class="preprocessor">#define IS_FILE_EXT(filename, ext) \</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">    (strcasecmp(&amp;filename[strlen(filename) - sizeof(ext) + 1], ext) == 0)</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// extern float goal</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// function declarations</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;esp_err_t <a class="code" href="webserver_8h.html#a47edf6cae52a768c7fe8ae290d1298bd">start_file_server</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *base_path);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// __cplusplus</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// COMPONENT_TEMPLATE_H</span></div>
-<div class="ttc" id="awebserver_8h_html_a47edf6cae52a768c7fe8ae290d1298bd"><div class="ttname"><a href="webserver_8h.html#a47edf6cae52a768c7fe8ae290d1298bd">start_file_server</a></div><div class="ttdeci">esp_err_t start_file_server(const char *base_path)</div><div class="ttdef"><b>Definition:</b> <a href="webserver_8c_source.html#l00306">webserver.c:306</a></div></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// __cplusplus</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">// includes pertinent to this file</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;esp_err.h&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;esp_http_server.h&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// defines</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="webserver_8h.html#a3b0a278c8fbd714fb54b7ba86899c406">   43</a></span>&#160;<span class="preprocessor">#define IS_FILE_EXT(filename, ext) \</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">    (strcasecmp(&amp;filename[strlen(filename) - sizeof(ext) + 1], ext) == 0)</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">extern</span> <span class="keyword">volatile</span> <span class="keywordtype">float</span> <a class="code" href="webserver_8h.html#a1f15cb3770398f59b2cbc43f39ab3c25">temp</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">extern</span> <span class="keyword">volatile</span> <span class="keywordtype">float</span> <a class="code" href="webserver_8h.html#abc1e18b4499aac03952b34d21d33e250">goal</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">extern</span> <span class="keyword">volatile</span> <span class="keywordtype">float</span> <a class="code" href="webserver_8h.html#a4735aad84bf7b470233a12d15ace779c">under</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">extern</span> <span class="keyword">volatile</span> <span class="keywordtype">float</span> <a class="code" href="webserver_8h.html#ac0dfa83c0dc4ebb9b05d9ef0cdaba9c1">over</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code" href="webserver_8h.html#ac57966e6d883ddf6cd64302148052921">update_display</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// function declarations</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    esp_err_t <a class="code" href="webserver_8h.html#a47edf6cae52a768c7fe8ae290d1298bd">start_file_server</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *base_path);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// __cplusplus</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// COMPONENT_TEMPLATE_H</span></div>
+<div class="ttc" id="awebserver_8h_html_a1f15cb3770398f59b2cbc43f39ab3c25"><div class="ttname"><a href="webserver_8h.html#a1f15cb3770398f59b2cbc43f39ab3c25">temp</a></div><div class="ttdeci">volatile float temp</div><div class="ttdoc">current temp</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00072">main.c:72</a></div></div>
+<div class="ttc" id="awebserver_8h_html_a4735aad84bf7b470233a12d15ace779c"><div class="ttname"><a href="webserver_8h.html#a4735aad84bf7b470233a12d15ace779c">under</a></div><div class="ttdeci">volatile float under</div><div class="ttdoc">margin below goal temp at which to turn relay on</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00073">main.c:73</a></div></div>
+<div class="ttc" id="awebserver_8h_html_a47edf6cae52a768c7fe8ae290d1298bd"><div class="ttname"><a href="webserver_8h.html#a47edf6cae52a768c7fe8ae290d1298bd">start_file_server</a></div><div class="ttdeci">esp_err_t start_file_server(const char *base_path)</div><div class="ttdef"><b>Definition:</b> <a href="webserver_8c_source.html#l00376">webserver.c:376</a></div></div>
+<div class="ttc" id="awebserver_8h_html_abc1e18b4499aac03952b34d21d33e250"><div class="ttname"><a href="webserver_8h.html#abc1e18b4499aac03952b34d21d33e250">goal</a></div><div class="ttdeci">volatile float goal</div><div class="ttdoc">goal temp for the system to aim for</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00071">main.c:71</a></div></div>
+<div class="ttc" id="awebserver_8h_html_ac0dfa83c0dc4ebb9b05d9ef0cdaba9c1"><div class="ttname"><a href="webserver_8h.html#ac0dfa83c0dc4ebb9b05d9ef0cdaba9c1">over</a></div><div class="ttdeci">volatile float over</div><div class="ttdoc">margin above goal temp at which to turn relay off</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00074">main.c:74</a></div></div>
+<div class="ttc" id="awebserver_8h_html_ac57966e6d883ddf6cd64302148052921"><div class="ttname"><a href="webserver_8h.html#ac57966e6d883ddf6cd64302148052921">update_display</a></div><div class="ttdeci">void update_display(void)</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00086">main.c:86</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

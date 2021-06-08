@@ -1,10 +1,11 @@
 <map id="ssd1306_display_text" name="ssd1306_display_text">
-<area shape="rect" id="node1" title=" " alt="" coords="828,56,991,83"/>
-<area shape="rect" id="node2" href="$ssd1306_8h.html#acf2ba9b3767f2aa4b083eab6bbef4005" title=" " alt="" coords="633,5,780,32"/>
-<area shape="rect" id="node4" href="$ssd1306_8h.html#a504d0d9e763c057a5ebca8dae01603a3" title=" " alt="" coords="359,56,585,83"/>
-<area shape="rect" id="node7" href="$ssd1306_8h.html#afa49ef46342acf47f30b0c18f81d3a6d" title=" " alt="" coords="389,107,555,133"/>
-<area shape="rect" id="node3" href="$ssd1306_8h.html#af373c6340de09dad55bbbef09d3f08c8" title=" " alt="" coords="393,5,551,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="1041,56,1204,83"/>
+<area shape="rect" id="node2" href="$ssd1306_8h.html#acf2ba9b3767f2aa4b083eab6bbef4005" title=" " alt="" coords="847,5,993,32"/>
+<area shape="rect" id="node4" href="$ssd1306_8h.html#a504d0d9e763c057a5ebca8dae01603a3" title=" " alt="" coords="572,56,799,83"/>
+<area shape="rect" id="node8" href="$ssd1306_8h.html#afa49ef46342acf47f30b0c18f81d3a6d" title=" " alt="" coords="359,107,524,133"/>
+<area shape="rect" id="node3" href="$ssd1306_8h.html#af373c6340de09dad55bbbef09d3f08c8" title=" " alt="" coords="607,5,764,32"/>
 <area shape="rect" id="node5" href="$main_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70" title=" " alt="" coords="5,81,92,108"/>
-<area shape="rect" id="node6" href="$control_8h.html#ae4a121c8d14cdd4314309474866e8492" title=" " alt="" coords="140,56,311,83"/>
-<area shape="rect" id="node8" href="$ssd1306_8h.html#acd2a9d0540d807af11f934105c0c1ff5" title=" " alt="" coords="173,157,277,184"/>
+<area shape="rect" id="node6" href="$webserver_8h.html#ac57966e6d883ddf6cd64302148052921" title=" " alt="" coords="381,56,502,83"/>
+<area shape="rect" id="node7" href="$control_8h.html#ae4a121c8d14cdd4314309474866e8492" title=" " alt="" coords="140,56,311,83"/>
+<area shape="rect" id="node9" href="$ssd1306_8h.html#acd2a9d0540d807af11f934105c0c1ff5" title=" " alt="" coords="173,157,277,184"/>
 </map>
