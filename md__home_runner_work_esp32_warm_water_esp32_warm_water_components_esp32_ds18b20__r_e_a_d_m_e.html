@@ -67,19 +67,19 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Docs: <a href="https://wolffshots.github.io/esp32-ds18b20/index.html"><img src="https://api.travis-ci.com/wolffshots/esp32-ds18b20.svg?branch=main" alt="couldn't get build status" style="pointer-events: none;" title="Current doc build status" class="inline"/></a></p>
-<h1><a class="anchor" id="autotoc_md13"></a>
+<h1><a class="anchor" id="autotoc_md14"></a>
 Introduction</h1>
 <p>This is a ESP32-compatible C component for the Maxim Integrated DS18B20 Programmable Resolution 1-Wire Digital Thermometer device.</p>
 <p>It supports multiple devices on the same 1-Wire bus.</p>
 <p>It is written and tested for v2.1, v3.0-3.3 and v4.1-beta1 of the <a href="https://github.com/espressif/esp-idf">ESP-IDF</a> environment, using the xtensa-esp32-elf toolchain (gcc version 5.2.0).</p>
-<h1><a class="anchor" id="autotoc_md14"></a>
+<h1><a class="anchor" id="autotoc_md15"></a>
 Dependencies</h1>
 <p>Requires <a href="https://github.com/wolffshots/esp32-owb">esp32-owb</a>.</p>
-<h1><a class="anchor" id="autotoc_md15"></a>
+<h1><a class="anchor" id="autotoc_md16"></a>
 Example</h1>
 <p>See <a href="https://github.com/DavidAntliff/esp32-ds18b20-example">esp32-ds18b20-example</a> for an example that supports single and multiple devices on a single bus.</p>
 <p>This fork has been extended to implement some of the functionality of the example above.</p>
-<h1><a class="anchor" id="autotoc_md16"></a>
+<h1><a class="anchor" id="autotoc_md17"></a>
 Folder contents</h1>
 <p>the component <b>esp32-ds18b20</b> contains two source file in C language <a href="ds18b20.c">ds18b20.c</a> and <a href="ds18b20_wrapper.c">ds18b20_wrapper.c</a>. these files are located in the root folder.</p>
 <p>esp-idf projects are build using cmake. the project build configuration is contained in <code>CMakeLists.txt</code> files that provide set of directives and instructions describing the project's source files and targets (executable, library, or both).</p>
@@ -98,7 +98,7 @@ Folder contents</h1>
 <div class="line">├── LICENSE.md                  MIT license file</div>
 <div class="line">└── README.md                   this file</div>
 </div><!-- fragment --><p>for more information on structure and contents of esp-idf projects, please refer to Section <a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/build-system.html">Build System</a> of the esp-idf programming guide.</p>
-<h1><a class="anchor" id="autotoc_md17"></a>
+<h1><a class="anchor" id="autotoc_md18"></a>
 Features</h1>
 <p>In cooperation with the underlying esp32-owb component, this component includes:</p>
 <ul>
@@ -113,7 +113,7 @@ Features</h1>
 <li>Temperature conversion and retrieval.</li>
 <li>Separation of conversion and temperature retrieval to allow for simultaneous conversion across multiple devices.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md18"></a>
+<h1><a class="anchor" id="autotoc_md19"></a>
 Parasitic Power Mode</h1>
 <p>Consult the <a href="http://datasheets.maximintegrated.com/en/ds/DS18B20.pdf">datasheet</a> for more detailed information about Parasitic Power mode.</p>
 <p>Parasitic power operation can be detected by <code><a class="el" href="ds18b20_8c.html#ad144c72353070a8b49a2f53ff118f18c" title="Check OneWire bus for presence of parasitic-powered devices.">ds18b20_check_for_parasite_power()</a></code> followed by a call to <code><a class="el" href="owb_8h.html#a323323f435cc78e3c83b6cdf432d952e" title="Enable or disable use of parasitic power on the One Wire Bus. This affects how devices signal on the ...">owb_use_parasitic_power()</a></code>, or simply set explicitly by a call to the latter.</p>
@@ -126,13 +126,13 @@ Parasitic Power Mode</h1>
 <p>Alternatively, consider using configuration 2.</p>
 <p>Note that use of parasitic power mode disables the ability for devices on the bus to signal that an operation has completed. This means that DS18B20 devices in parasitic power mode are not able to communicate when they have completed a temperature conversion. In this mode, a delay for a pre-calculated duration occurs, and then the conversion result is read from the device(s). <em>If your ESP32 is not running on the correct clock rate, this duration may be too short!</em> <br  />
 </p>
-<h1><a class="anchor" id="autotoc_md19"></a>
+<h1><a class="anchor" id="autotoc_md20"></a>
 Documentation</h1>
 <p>Automatically generated API documentation (doxygen) is available <a href="https://wolffshots.github.io/esp32-ds18b20/index.html">here</a>.</p>
-<h1><a class="anchor" id="autotoc_md20"></a>
+<h1><a class="anchor" id="autotoc_md21"></a>
 License</h1>
 <p>The code in this project is licensed under the MIT license - see LICENSE for details.</p>
-<h1><a class="anchor" id="autotoc_md21"></a>
+<h1><a class="anchor" id="autotoc_md22"></a>
 Links</h1>
 <ul>
 <li><a href="http://datasheets.maximintegrated.com/en/ds/DS18B20.pdf">DS18B20 Datasheet</a></li>
@@ -140,7 +140,7 @@ Links</h1>
 <li><a href="https://www.maximintegrated.com/en/app-notes/index.mvp/id/187">1-Wire Search Algorithm</a></li>
 <li><a href="https://github.com/espressif/esp-idf">Espressif IoT Development Framework for ESP32</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md22"></a>
+<h1><a class="anchor" id="autotoc_md23"></a>
 Acknowledgements</h1>
 <p>Parts of this code are based on references provided to the public domain by Maxim Integrated.</p>
 <p>"1-Wire" is a registered trademark of Maxim Integrated. </p>

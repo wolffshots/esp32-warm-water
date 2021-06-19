@@ -70,13 +70,13 @@ $(function() {
 <p>esp-idf implementation of temperature controlled relay to switch a heating element to maintain water in a specific temperature range. A webserver is used to interface with the system and change the goal temperature, range from the goal and the relay state (forced on or off).</p>
 <p>employs wifi, onewire and a relay to control the temperature of a body of water for the purpose of film development primarily. other uses include cooking and general chemistry.</p>
 <p>the main motivation to do this project was to be able to better process c41 colour film.</p>
-<h1><a class="anchor" id="autotoc_md73"></a>
+<h1><a class="anchor" id="autotoc_md74"></a>
 how to use project</h1>
 <p>this project is built using the Visual Studio Code esp-idf plugin.</p>
 <p>configure it from command line using <code>idf.py</code> or by using the cog in the plugin.</p>
 <p>once it is configured, select the correct port of your ESP32 module and build and upload to it.</p>
 <p>an explanation of the hardware setup will come at a later stage.</p>
-<h1><a class="anchor" id="autotoc_md74"></a>
+<h1><a class="anchor" id="autotoc_md75"></a>
 frontend files</h1>
 <p>the files in the <code>front/build</code> directory are for displaying via the webserver and are sort of a separate entity from the rest of the code.</p>
 <p>they automatically get made into an image but don't seem to flash with the vscode extension buttons (as a result you may need to run <code>idf.py -p PORT flash</code> for changes to persist).</p>
@@ -87,7 +87,7 @@ frontend files</h1>
 <li><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>add more reserved locations here</dd></dl>
 </li>
 </ul>
-<h1><a class="anchor" id="autotoc_md75"></a>
+<h1><a class="anchor" id="autotoc_md76"></a>
 dependencies</h1>
 <ul>
 <li>esp32-ds18b20 - <a href="https://github.com/wolffshots/esp32-ds18b20">github</a> - <a href="https://gitlab.com/wolffshots/esp32-ds18b20">gitlab</a> - <a href="https://wolffshots.github.io/esp32-ds18b20/index.html">docs</a></li>
@@ -98,7 +98,7 @@ dependencies</h1>
 <li>esp32-wifi - <a href="https://github.com/wolffshots/esp32-wifi">github</a> - <a href="https://gitlab.com/wolffshots/esp32-wifi">gitlab</a> - <a href="https://wolffshots.github.io/esp32-wifi/index.html">docs</a></li>
 <li>esp32-timer - <a href="https://github.com/wolffshots/esp32-timer">github</a> - <a href="https://gitlab.com/wolffshots/esp32-timer">gitlab</a> - <a href="https://wolffshots.github.io/esp32-timer/index.html">docs</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md76"></a>
+<h1><a class="anchor" id="autotoc_md77"></a>
 folder contents</h1>
 <p>the project <b>esp32-warm-water</b> contains one source file in C language <a href="main/main.c">main.c</a>. the file is located in folder [main](main).</p>
 <p>esp-idf projects are build using cmake. the project build configuration is contained in <code>CMakeLists.txt</code> files that provide set of directives and instructions describing the project's source files and targets (executable, library, or both).</p>
@@ -122,13 +122,13 @@ folder contents</h1>
 <div class="line">├── Makefile                    makefile used by legacy GNU Make</div>
 <div class="line">└── README.md                   this file</div>
 </div><!-- fragment --><p>for more information on structure and contents of esp-idf projects, please refer to Section <a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/build-system.html">Build System</a> of the esp-idf programming guide.</p>
-<h1><a class="anchor" id="autotoc_md77"></a>
+<h1><a class="anchor" id="autotoc_md78"></a>
 documentation</h1>
 <p>automatically generated API documentation (doxygen) is available <a href="https://wolffshots.github.io/esp32-warm-water/index.html">here</a>.</p>
-<h1><a class="anchor" id="autotoc_md78"></a>
+<h1><a class="anchor" id="autotoc_md79"></a>
 license</h1>
 <p>the code in this project is licensed under the MIT license - see <a class="el" href="md__home_runner_work_esp32_warm_water_esp32_warm_water__l_i_c_e_n_s_e.html">LICENSE</a> for details.</p>
-<h1><a class="anchor" id="autotoc_md79"></a>
+<h1><a class="anchor" id="autotoc_md80"></a>
 troubleshooting</h1>
 <ul>
 <li>program upload failure<ul>
@@ -137,13 +137,13 @@ troubleshooting</h1>
 </ul>
 </li>
 </ul>
-<h1><a class="anchor" id="autotoc_md80"></a>
+<h1><a class="anchor" id="autotoc_md81"></a>
 helpful commands</h1>
 <ul>
 <li><code>git submodule update --remote --recursive</code> - updates the checked out modules to the most recent commit to their main branch</li>
 <li><code>git push all</code> - as setup with <code><a href="https://jigarius.com/blog/multiple-git-remote-repositories">https://jigarius.com/blog/multiple-git-remote-repositories</a></code></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md81"></a>
+<h2><a class="anchor" id="autotoc_md82"></a>
 acknowledgements</h2>
 <ul>
 <li>a big thank you to <a href="https://github.com/DavidAntliff/">David Antliff</a> for providing his fantastic onewire and ds18b20 libraries on github under the MIT license</li>
@@ -151,7 +151,7 @@ acknowledgements</h2>
 <li>last but not least, thanks to <a href="https://github.com/grabt234">Grabt234</a> for helping me get into this field</li>
 <li>"1-Wire" is a registered trademark of Maxim Integrated.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md82"></a>
+<h1><a class="anchor" id="autotoc_md83"></a>
 todo</h1>
 <ul>
 <li>[x] timer for temp reads</li>

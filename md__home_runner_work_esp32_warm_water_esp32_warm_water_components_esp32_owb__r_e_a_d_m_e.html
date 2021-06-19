@@ -70,7 +70,7 @@ $(function() {
 <p>This is a ESP32-compatible C component for the Maxim Integrated "1-Wire" protocol.</p>
 <p>It is written and tested for version 3.0-3.3 and 4.1-beta1 of the <a href="https://github.com/espressif/esp-idf">ESP-IDF</a> environment, using the xtensa-esp32-elf toolchain (gcc version 5.2.0, crosstool-ng-1.22.0-80-g6c4433a).</p>
 <p>Support for v2.1 is available on the <a href="https://github.com/DavidAntliff/esp32-owb/tree/ESP-IDF_v2.1">ESP-IDF_v2.1</a> branch.</p>
-<h1><a class="anchor" id="autotoc_md31"></a>
+<h1><a class="anchor" id="autotoc_md32"></a>
 Features</h1>
 <p>This library includes:</p>
 <ul>
@@ -86,16 +86,16 @@ Features</h1>
 <p>This component includes two methods of bus access - delay-driven GPIO and RMT-driven slots. The original implementation used CPU delays to construct the 1-Wire read/write timeslots however this proved to be too unreliable. A second method, using the ESP32's RMT peripheral, results in very accurate read/write timeslots and more reliable operation.</p>
 <p>Therefore I highly recommend that you use the RMT driver. <em>The GPIO driver is deprecated and will be removed.</em></p>
 <p>See documentation for <a href="https://www.github.com/DavidAntliff/esp32-ds18b20-example#parasitic-power-mode">esp32-ds18b20</a> for further information about parasitic power mode, including strong pull-up configuration.</p>
-<h1><a class="anchor" id="autotoc_md32"></a>
+<h1><a class="anchor" id="autotoc_md33"></a>
 Documentation</h1>
 <p>Automatically generated API documentation (doxygen) is available <a href="https://davidantliff.github.io/esp32-owb/index.html">here</a>.</p>
-<h1><a class="anchor" id="autotoc_md33"></a>
+<h1><a class="anchor" id="autotoc_md34"></a>
 Source Code</h1>
 <p>The source is available from <a href="https://www.github.com/DavidAntliff/esp32-owb">GitHub</a>.</p>
-<h1><a class="anchor" id="autotoc_md34"></a>
+<h1><a class="anchor" id="autotoc_md35"></a>
 License</h1>
 <p>The code in this project is licensed under the MIT license - see LICENSE for details.</p>
-<h1><a class="anchor" id="autotoc_md35"></a>
+<h1><a class="anchor" id="autotoc_md36"></a>
 Links</h1>
 <ul>
 <li><a href="https://github.com/DavidAntliff/esp32-ds18b20">esp32-ds18b20</a> - ESP32-compatible DS18B20 Digital Thermometer component for ESP32</li>
@@ -103,12 +103,12 @@ Links</h1>
 <li><a href="https://www.maximintegrated.com/en/app-notes/index.mvp/id/187">1-Wire Search Algorithm</a></li>
 <li><a href="https://github.com/espressif/esp-idf">Espressif IoT Development Framework for ESP32</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md36"></a>
+<h1><a class="anchor" id="autotoc_md37"></a>
 Acknowledgements</h1>
 <p>Thank you to <a href="https://github.com/chmorgan">Chris Morgan</a> for his contribution of adding RMT peripheral support for more reliable operation.</p>
 <p>Parts of this code are based on references provided to the public domain by Maxim Integrated.</p>
 <p>"1-Wire" is a registered trademark of Maxim Integrated.</p>
-<h1><a class="anchor" id="autotoc_md37"></a>
+<h1><a class="anchor" id="autotoc_md38"></a>
 todo</h1>
 <ul>
 <li>[ ] go through code and comment towards my own understanding </li>
