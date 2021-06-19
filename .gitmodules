@@ -28,3 +28,6 @@
 [submodule "components/esp32-webserver"]
 	path = components/esp32-webserver
 	url = ../esp32-webserver.git
+[submodule "board"]
+	path = board
+	url = ../esp32-warm-water-board.git
