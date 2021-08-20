@@ -107,6 +107,7 @@ the code in this project is licensed under the MIT license - see [LICENSE](LICEN
 - thanks to [Shirkybooi](https://github.com/ShirkyBooi) for pushing me to use esp-idf
 - last but not least, thanks to [Grabt234](https://github.com/grabt234) for helping me get into this field
 - "1-Wire" is a registered trademark of Maxim Integrated.
+- [brian-lough](https://www.hackster.io/brian-lough) for [this](https://www.hackster.io/brian-lough/3-simple-ways-of-programming-an-esp8266-12x-module-c514ee) simple but helpful post 
 
 # todo
 
