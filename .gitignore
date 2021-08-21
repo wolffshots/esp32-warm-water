@@ -1,6 +1,7 @@
 build/
 sdkconfig
 sdkconfig.old
-.vscode
+.vscode/*
+!.vscode/c_cpp_properties.json
 *-deprecated
 debug.log
