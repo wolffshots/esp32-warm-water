@@ -27,7 +27,7 @@ on:
     #        │  │ │ │ │
     #        │  │ │ │ │
     #        *  * * * *
-    - cron: '0 0 * * *'
+    - cron: '0 0 */2 * *'
 
 jobs:
   analyze:
@@ -85,7 +85,7 @@ jobs:
       run:  cd /home/runner/work/esp32-warm-water/ &&
             mkdir esp && 
             cd esp &&
-            git clone -b v4.2.1 --recursive https://github.com/espressif/esp-idf.git &&
+            git clone -b v4.3 --recursive https://github.com/espressif/esp-idf.git &&
             cd esp-idf &&
             ./install.sh > /dev/null
     - name: Build esp-idf Code - build warm-water
