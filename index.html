@@ -66,7 +66,7 @@ $(function() {
 <div class="title">warm water in esp-idf </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__home_runner_work_esp32_warm_water_esp32_warm_water_README"></a><a href="https://docs.espressif.com/projects/esp-idf/en/stable/get-started/"><img src="https://img.shields.io/badge/esp--idf-v4.3%2B-blue.svg" alt="Platform: ESP-IDF" style="pointer-events: none;" class="inline"/></a> <img src="https://img.shields.io/github/workflow/status/wolffshots/esp32-warm-water/doxygen?label=doxygen" alt="GitHub Docs Workflow Status" class="inline"/> <img src="https://img.shields.io/github/workflow/status/wolffshots/esp32-warm-water/codeql?label=codeql/build" alt="GitHub CodeQL Workflow Status" class="inline"/> <img src="https://img.shields.io/github/license/wolffshots/esp32-warm-water" alt="GitHub" class="inline"/> <img src="https://img.shields.io/github/languages/code-size/wolffshots/esp32-warm-water" alt="GitHub code size in bytes" class="inline"/> <img src="https://img.shields.io/github/repo-size/wolffshots/esp32-warm-water" alt="GitHub repo size" class="inline"/> <img src="https://img.shields.io/tokei/lines/github/wolffshots/esp32-warm-water" alt="Lines of code" class="inline"/> <img src="https://img.shields.io/github/v/tag/wolffshots/esp32-warm-water" alt="GitHub tag (latest by date)" class="inline"/></p>
+<div class="textblock"><p><a class="anchor" id="md__home_runner_work_esp32_warm_water_esp32_warm_water_README"></a> <a href="https://docs.espressif.com/projects/esp-idf/en/stable/get-started/"><img src="https://img.shields.io/badge/esp--idf-v4.3%2B-blue.svg" alt="Platform: ESP-IDF" style="pointer-events: none;" class="inline"/></a> <img src="https://img.shields.io/github/workflow/status/wolffshots/esp32-warm-water/doxygen?label=doxygen" alt="GitHub Docs Workflow Status" class="inline"/> <img src="https://img.shields.io/github/workflow/status/wolffshots/esp32-warm-water/codeql?label=codeql/build" alt="GitHub CodeQL Workflow Status" class="inline"/> <img src="https://img.shields.io/github/license/wolffshots/esp32-warm-water" alt="GitHub" class="inline"/> <img src="https://img.shields.io/github/languages/code-size/wolffshots/esp32-warm-water" alt="GitHub code size in bytes" class="inline"/> <img src="https://img.shields.io/github/repo-size/wolffshots/esp32-warm-water" alt="GitHub repo size" class="inline"/> <img src="https://img.shields.io/tokei/lines/github/wolffshots/esp32-warm-water" alt="Lines of code" class="inline"/> <img src="https://img.shields.io/github/v/tag/wolffshots/esp32-warm-water" alt="GitHub tag (latest by date)" class="inline"/></p>
 <p>esp-idf implementation of temperature controlled relay to switch a heating element to maintain water in a specific temperature range. A webserver is used to interface with the system and change the goal temperature, range from the goal and the relay state (forced on or off).</p>
 <p>employs wifi, onewire and a relay to control the temperature of a body of water for the purpose of film development primarily. other uses include cooking and general chemistry.</p>
 <p>the main motivation to do this project was to be able to better process c41 colour film.</p>
@@ -150,7 +150,7 @@ acknowledgements</h2>
 <li>thanks to <a href="https://github.com/ShirkyBooi">Shirkybooi</a> for pushing me to use esp-idf</li>
 <li>last but not least, thanks to <a href="https://github.com/grabt234">Grabt234</a> for helping me get into this field</li>
 <li>"1-Wire" is a registered trademark of Maxim Integrated.</li>
-<li><a href="https://www.hackster.io/brian-lough">brian-lough</a> for <a href="https://www.hackster.io/brian-lough/3-simple-ways-of-programming-an-esp8266-12x-module-c514ee">this</a> simple but helpful post</li>
+<li><a href="https://www.hackster.io/brian-lough">brian-lough</a> for <a href="https://www.hackster.io/brian-lough/3-simple-ways-of-programming-an-esp8266-12x-module-c514ee">this</a> simple but helpful post and linked to <a href="https://github.com/espressif/esptool/wiki/ESP32-Boot-Mode-Selection">this</a> for boot mode selection</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md83"></a>
 todo</h1>
@@ -165,7 +165,6 @@ todo</h1>
 <li>[x] margins for goal temp</li>
 <li>[x] spiffs!</li>
 <li>[x] webserver/url handling - <a href="https://github.com/espressif/esp-idf/tree/master/examples/protocols/http_server/file_serving">https://github.com/espressif/esp-idf/tree/master/examples/protocols/http_server/file_serving</a></li>
-<li>[ ] component unit testing - <a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/unit-tests.html">https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/unit-tests.html</a></li>
 <li>[x] implement build testing - <a href="https://calinradoni.github.io/pages/200203-travisci-esp-idf.html">https://calinradoni.github.io/pages/200203-travisci-esp-idf.html</a></li>
 <li>[x] make frontend into own git module </li>
 </ul>

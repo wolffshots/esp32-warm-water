@@ -291,21 +291,21 @@ $(function() {
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;}</div>
 <div class="line"><a name="l00248"></a><span class="lineno"><a class="line" href="ds18b20__wrapper_8c.html#a8dc5df50a071d5b9863e2f1e01db4ee1">  248</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="ds18b20__wrapper_8c.html#a8dc5df50a071d5b9863e2f1e01db4ee1">ds18b20_wrapped_capture</a>(<span class="keywordtype">float</span> *results, <span class="keywordtype">int</span> size)</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;{</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordflow">if</span> (size &gt; 0)</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    {</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        TickType_t last_wake_time = xTaskGetTickCount();</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    TickType_t last_wake_time = xTaskGetTickCount();</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordflow">if</span> (size &gt; 0)</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    {</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <a class="code" href="ds18b20_8c.html#ad1d5ef99f9be1eb8bf72b793a71fa259">ds18b20_convert_all</a>(<a class="code" href="ds18b20__wrapper_8c.html#a271da4c55fb9f1f42ecefb6d26bfc416">owb</a>);</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <a class="code" href="ds18b20_8c.html#a76ac59caf970799cedc280d8bc89e020">ds18b20_wait_for_conversion</a>(<a class="code" href="ds18b20__wrapper_8c.html#ab729a086f283d9a9132b8ee6428a68e9">devices</a>[0]);</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; ++i)</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        {</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            <a class="code" href="ds18b20_8c.html#a7f254ca1bc00a2f2a44389c185bdc9b0">ds18b20_read_temp</a>(<a class="code" href="ds18b20__wrapper_8c.html#ab729a086f283d9a9132b8ee6428a68e9">devices</a>[i], &amp;results[i]);</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        }</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        vTaskDelayUntil(&amp;last_wake_time, CONFIG_TEMP_SAMPLE_PERIOD / portTICK_PERIOD_MS);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    }</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    {</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        ESP_LOGE(<a class="code" href="wifi__sta_8c.html#a5a85b9c772bbeb480b209a3e6ea92b4c">TAG</a>, <span class="stringliteral">&quot;no DS18B20 devices detected or invalid size provided&quot;</span>);</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    }</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    }</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    {</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        ESP_LOGE(<a class="code" href="wifi__sta_8c.html#a5a85b9c772bbeb480b209a3e6ea92b4c">TAG</a>, <span class="stringliteral">&quot;no DS18B20 devices detected or invalid size provided&quot;</span>);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    }</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    vTaskDelayUntil(&amp;last_wake_time, CONFIG_TEMP_SAMPLE_PERIOD / portTICK_PERIOD_MS);</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;}</div>
 <div class="ttc" id="ads18b20_8c_html_a345a04f36d80c7cd63352cdcfe83dd99"><div class="ttname"><a href="ds18b20_8c.html#a345a04f36d80c7cd63352cdcfe83dd99">ds18b20_init_solo</a></div><div class="ttdeci">void ds18b20_init_solo(DS18B20_Info *ds18b20_info, const OneWireBus *bus)</div><div class="ttdoc">Initialise a device info instance as a solo device on the bus.</div><div class="ttdef"><b>Definition:</b> <a href="ds18b20_8c_source.html#l00378">ds18b20.c:378</a></div></div>
 <div class="ttc" id="ads18b20_8c_html_a4d9266fa752d3f6d533250324af16e67"><div class="ttname"><a href="ds18b20_8c.html#a4d9266fa752d3f6d533250324af16e67">ds18b20_set_resolution</a></div><div class="ttdeci">bool ds18b20_set_resolution(DS18B20_Info *ds18b20_info, DS18B20_RESOLUTION resolution)</div><div class="ttdoc">Set temperature measurement resolution.</div><div class="ttdef"><b>Definition:</b> <a href="ds18b20_8c_source.html#l00404">ds18b20.c:404</a></div></div>

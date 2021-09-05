@@ -1,6 +1,6 @@
 <map id="/home/runner/work/esp32&#45;warm&#45;water/esp32&#45;warm&#45;water/components/esp32&#45;webserver/webserver.c" name="/home/runner/work/esp32&#45;warm&#45;water/esp32&#45;warm&#45;water/components/esp32&#45;webserver/webserver.c">
-<area shape="rect" id="node1" title=" " alt="" coords="484,5,675,76"/>
-<area shape="rect" id="node2" href="$webserver_8h.html" title=" " alt="" coords="41,124,142,151"/>
+<area shape="rect" id="node1" title="implementations for component webserver" alt="" coords="484,5,675,76"/>
+<area shape="rect" id="node2" href="$webserver_8h.html" title="defininitions for webserver" alt="" coords="41,124,142,151"/>
 <area shape="rect" id="node4" title=" " alt="" coords="111,199,248,225"/>
 <area shape="rect" id="node5" title=" " alt="" coords="217,124,283,151"/>
 <area shape="rect" id="node6" title=" " alt="" coords="308,124,379,151"/>

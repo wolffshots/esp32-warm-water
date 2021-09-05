@@ -1,5 +1,7 @@
 <map id="check_relay" name="check_relay">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,105,57"/>
-<area shape="rect" id="node2" href="$main_8c.html#aded2e162d1f10051c4c515fd2f14ff4a" title=" " alt="" coords="153,5,232,32"/>
-<area shape="rect" id="node3" href="$main_8c.html#a798fc156480f5feea1a9e83d6848dfea" title=" " alt="" coords="153,56,232,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,105,108"/>
+<area shape="rect" id="node2" href="$led_8h.html#aff46f2ed6454ce981ec7aafe694f133a" title=" " alt="" coords="159,5,226,32"/>
+<area shape="rect" id="node3" href="$led_8h.html#aacbad362e0d21f1d5d77d43d286397d7" title=" " alt="" coords="160,56,225,83"/>
+<area shape="rect" id="node4" href="$main_8c.html#aded2e162d1f10051c4c515fd2f14ff4a" title=" " alt="" coords="153,107,232,133"/>
+<area shape="rect" id="node5" href="$main_8c.html#a798fc156480f5feea1a9e83d6848dfea" title=" " alt="" coords="153,157,232,184"/>
 </map>

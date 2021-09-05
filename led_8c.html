@@ -91,10 +91,10 @@ Include dependency graph for led.c:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a7eb4d382bdd4b42c57dbb7154d03ac66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="led_8c.html#a7eb4d382bdd4b42c57dbb7154d03ac66">led_init</a> (void)</td></tr>
 <tr class="separator:a7eb4d382bdd4b42c57dbb7154d03ac66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a801936b261245054eb570e040642818a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="led_8c.html#a801936b261245054eb570e040642818a">led_on</a> (void)</td></tr>
-<tr class="separator:a801936b261245054eb570e040642818a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a429f05b7eac928971c19e37ddc7079be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="led_8c.html#a429f05b7eac928971c19e37ddc7079be">led_off</a> (void)</td></tr>
-<tr class="separator:a429f05b7eac928971c19e37ddc7079be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacbad362e0d21f1d5d77d43d286397d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="led_8c.html#aacbad362e0d21f1d5d77d43d286397d7">led_on</a> (int pin)</td></tr>
+<tr class="separator:aacbad362e0d21f1d5d77d43d286397d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff46f2ed6454ce981ec7aafe694f133a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="led_8c.html#aff46f2ed6454ce981ec7aafe694f133a">led_off</a> (int pin)</td></tr>
+<tr class="separator:aff46f2ed6454ce981ec7aafe694f133a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a7eb4d382bdd4b42c57dbb7154d03ac66"></a>
@@ -124,11 +124,20 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="gpio__wrapper_8c.html#a18fdd3e33e81b308c0b0cb06a439c9e0" title=" " alt="" coords="124,5,223,32"/>
 </map>
 </div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="led_8c_a7eb4d382bdd4b42c57dbb7154d03ac66_icgraph.png" border="0" usemap="#aled_8c_a7eb4d382bdd4b42c57dbb7154d03ac66_icgraph" alt=""/></div>
+<map name="aled_8c_a7eb4d382bdd4b42c57dbb7154d03ac66_icgraph" id="aled_8c_a7eb4d382bdd4b42c57dbb7154d03ac66_icgraph">
+<area shape="rect" title=" " alt="" coords="140,5,211,32"/>
+<area shape="rect" href="main_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70" title=" " alt="" coords="5,5,92,32"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a429f05b7eac928971c19e37ddc7079be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a429f05b7eac928971c19e37ddc7079be">&#9670;&nbsp;</a></span>led_off()</h2>
+<a id="aff46f2ed6454ce981ec7aafe694f133a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff46f2ed6454ce981ec7aafe694f133a">&#9670;&nbsp;</a></span>led_off()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -136,20 +145,31 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void led_off </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pin</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>turn the led off (gpio high) </p>
+<p>turn the led off </p>
 
-<p class="definition">Definition at line <a class="el" href="led_8c_source.html#l00014">14</a> of file <a class="el" href="led_8c_source.html">led.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="led_8c_source.html#l00015">15</a> of file <a class="el" href="led_8c_source.html">led.c</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="led_8c_aff46f2ed6454ce981ec7aafe694f133a_icgraph.png" border="0" usemap="#aled_8c_aff46f2ed6454ce981ec7aafe694f133a_icgraph" alt=""/></div>
+<map name="aled_8c_aff46f2ed6454ce981ec7aafe694f133a_icgraph" id="aled_8c_aff46f2ed6454ce981ec7aafe694f133a_icgraph">
+<area shape="rect" title=" " alt="" coords="507,5,573,32"/>
+<area shape="rect" href="control_8h.html#a1862eb221c17d4f730b7a6947944c4f0" title=" " alt="" coords="359,5,459,32"/>
+<area shape="rect" href="control_8h.html#ae4a121c8d14cdd4314309474866e8492" title=" " alt="" coords="140,5,311,32"/>
+<area shape="rect" href="main_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70" title=" " alt="" coords="5,5,92,32"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a801936b261245054eb570e040642818a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a801936b261245054eb570e040642818a">&#9670;&nbsp;</a></span>led_on()</h2>
+<a id="aacbad362e0d21f1d5d77d43d286397d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacbad362e0d21f1d5d77d43d286397d7">&#9670;&nbsp;</a></span>led_on()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -157,21 +177,23 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void led_on </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pin</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>turn the led on (gpio low) </p>
+<p>turn the led on </p>
 
-<p class="definition">Definition at line <a class="el" href="led_8c_source.html#l00009">9</a> of file <a class="el" href="led_8c_source.html">led.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="led_8c_source.html#l00010">10</a> of file <a class="el" href="led_8c_source.html">led.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="led_8c_a801936b261245054eb570e040642818a_icgraph.png" border="0" usemap="#aled_8c_a801936b261245054eb570e040642818a_icgraph" alt=""/></div>
-<map name="aled_8c_a801936b261245054eb570e040642818a_icgraph" id="aled_8c_a801936b261245054eb570e040642818a_icgraph">
-<area shape="rect" title=" " alt="" coords="140,5,205,32"/>
+<div class="center"><img src="led_8c_aacbad362e0d21f1d5d77d43d286397d7_icgraph.png" border="0" usemap="#aled_8c_aacbad362e0d21f1d5d77d43d286397d7_icgraph" alt=""/></div>
+<map name="aled_8c_aacbad362e0d21f1d5d77d43d286397d7_icgraph" id="aled_8c_aacbad362e0d21f1d5d77d43d286397d7_icgraph">
+<area shape="rect" title=" " alt="" coords="507,5,572,32"/>
+<area shape="rect" href="control_8h.html#a1862eb221c17d4f730b7a6947944c4f0" title=" " alt="" coords="359,5,459,32"/>
+<area shape="rect" href="control_8h.html#ae4a121c8d14cdd4314309474866e8492" title=" " alt="" coords="140,5,311,32"/>
 <area shape="rect" href="main_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70" title=" " alt="" coords="5,5,92,32"/>
 </map>
 </div>

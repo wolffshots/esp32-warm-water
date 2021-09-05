@@ -74,20 +74,21 @@ $(function() {
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="led_8h.html#a7eb4d382bdd4b42c57dbb7154d03ac66">    4</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="led_8c.html#a7eb4d382bdd4b42c57dbb7154d03ac66">led_init</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <a class="code" href="gpio__wrapper_8c.html#a18fdd3e33e81b308c0b0cb06a439c9e0">gpio_output</a>(CONFIG_ESP_BUILTIN_LED);</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;}</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="led_8h.html#a801936b261245054eb570e040642818a">    9</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="led_8c.html#a801936b261245054eb570e040642818a">led_on</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    gpio_set_level(CONFIG_ESP_BUILTIN_LED, 0);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="led_8h.html#a429f05b7eac928971c19e37ddc7079be">   14</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="led_8c.html#a429f05b7eac928971c19e37ddc7079be">led_off</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    gpio_set_level(CONFIG_ESP_BUILTIN_LED, 1);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <a class="code" href="gpio__wrapper_8c.html#a18fdd3e33e81b308c0b0cb06a439c9e0">gpio_output</a>(CONFIG_STATUS_ONE_PIN);</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <a class="code" href="gpio__wrapper_8c.html#a18fdd3e33e81b308c0b0cb06a439c9e0">gpio_output</a>(CONFIG_STATUS_TWO_PIN);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="led_8h.html#aacbad362e0d21f1d5d77d43d286397d7">   10</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="led_8c.html#aacbad362e0d21f1d5d77d43d286397d7">led_on</a>(<span class="keywordtype">int</span> pin)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    gpio_set_level(pin, 1);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="led_8h.html#aff46f2ed6454ce981ec7aafe694f133a">   15</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="led_8c.html#aff46f2ed6454ce981ec7aafe694f133a">led_off</a>(<span class="keywordtype">int</span> pin)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    gpio_set_level(pin, 0);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
 <div class="ttc" id="agpio__wrapper_8c_html_a18fdd3e33e81b308c0b0cb06a439c9e0"><div class="ttname"><a href="gpio__wrapper_8c.html#a18fdd3e33e81b308c0b0cb06a439c9e0">gpio_output</a></div><div class="ttdeci">void gpio_output(gpio_num_t pin_number)</div><div class="ttdef"><b>Definition:</b> <a href="gpio__wrapper_8c_source.html#l00041">gpio_wrapper.c:41</a></div></div>
-<div class="ttc" id="aled_8c_html_a429f05b7eac928971c19e37ddc7079be"><div class="ttname"><a href="led_8c.html#a429f05b7eac928971c19e37ddc7079be">led_off</a></div><div class="ttdeci">void led_off(void)</div><div class="ttdef"><b>Definition:</b> <a href="led_8c_source.html#l00014">led.c:14</a></div></div>
 <div class="ttc" id="aled_8c_html_a7eb4d382bdd4b42c57dbb7154d03ac66"><div class="ttname"><a href="led_8c.html#a7eb4d382bdd4b42c57dbb7154d03ac66">led_init</a></div><div class="ttdeci">void led_init(void)</div><div class="ttdef"><b>Definition:</b> <a href="led_8c_source.html#l00004">led.c:4</a></div></div>
-<div class="ttc" id="aled_8c_html_a801936b261245054eb570e040642818a"><div class="ttname"><a href="led_8c.html#a801936b261245054eb570e040642818a">led_on</a></div><div class="ttdeci">void led_on(void)</div><div class="ttdef"><b>Definition:</b> <a href="led_8c_source.html#l00009">led.c:9</a></div></div>
+<div class="ttc" id="aled_8c_html_aacbad362e0d21f1d5d77d43d286397d7"><div class="ttname"><a href="led_8c.html#aacbad362e0d21f1d5d77d43d286397d7">led_on</a></div><div class="ttdeci">void led_on(int pin)</div><div class="ttdef"><b>Definition:</b> <a href="led_8c_source.html#l00010">led.c:10</a></div></div>
+<div class="ttc" id="aled_8c_html_aff46f2ed6454ce981ec7aafe694f133a"><div class="ttname"><a href="led_8c.html#aff46f2ed6454ce981ec7aafe694f133a">led_off</a></div><div class="ttdeci">void led_off(int pin)</div><div class="ttdef"><b>Definition:</b> <a href="led_8c_source.html#l00015">led.c:15</a></div></div>
 <div class="ttc" id="aled_8h_html"><div class="ttname"><a href="led_8h.html">led.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
