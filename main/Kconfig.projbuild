@@ -1,10 +1,5 @@
 # https://www.kernel.org/doc/html/latest/kbuild/kconfig-language.html
 menu "wolffshots/esp32-warm-water config"
-    config ESP_BUILTIN_LED
-        int "built in LED pin"
-        default 5
-        help
-            the pin of the LED built into the board if it has one (set to -1 otherwise)
     config RELAY_ONE_PIN
         int "first pin for relay"
         default 18
@@ -15,6 +10,16 @@ menu "wolffshots/esp32-warm-water config"
         default 19
         help
             the two pin for the relay
+    config STATUS_ONE_PIN
+        int "first status pin"
+        default 27
+        help
+            pin for first status led
+    config STATUS_TWO_PIN
+        int "second status pin"
+        default 12
+        help
+            pin for second status led
     config CONTROL_INTERVAL
         int "period in which to poll the sensor and check the status"
         default 5000

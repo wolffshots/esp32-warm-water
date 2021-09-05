@@ -140,7 +140,7 @@ void check_system_handler(void *arg)
     {                                                                             //
         ESP_LOGI(TAG, "%d: %.3f - %lld us", i, results[i], esp_timer_get_time()); // log result out
     }                                                                             // this will probably be phased out once relay control is implemented
-    temp = results[0];
+    temp = results[0];                                                            // this should be the average
     update_display();
 }
 /**
@@ -155,12 +155,14 @@ void check_relay(float average_temp)
         // turn off relay
         heating = false;
         relay_off();
+        led_off(CONFIG_STATUS_ONE_PIN);
     }
     else if ((average_temp < goal - under) && !heating)
     {
         // turn on relay
         heating = true;
         relay_on();
+        led_on(CONFIG_STATUS_ONE_PIN);
     }
     else
     {
@@ -199,6 +201,7 @@ void app_main(void)
     relay_off();
     gpio_output(CONFIG_RELAY_ONE_PIN);
     gpio_output(CONFIG_RELAY_TWO_PIN);
+    led_init();
 
     num_sensors = ds18b20_wrapped_init(); // capture num sensors and init
 
@@ -212,6 +215,4 @@ void app_main(void)
     ssd1306_wrapped_display_text(&dev, 0, " warm water :)");
 
     ESP_ERROR_CHECK(start_file_server("/spiffs"));
-
-    led_on();
 }

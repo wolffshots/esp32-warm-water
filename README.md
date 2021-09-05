@@ -1,4 +1,5 @@
 # warm water in esp-idf
+
 [![Platform: ESP-IDF](https://img.shields.io/badge/esp--idf-v4.3%2B-blue.svg)](https://docs.espressif.com/projects/esp-idf/en/stable/get-started/)
 ![GitHub Docs Workflow Status](https://img.shields.io/github/workflow/status/wolffshots/esp32-warm-water/doxygen?label=doxygen)
 ![GitHub CodeQL Workflow Status](https://img.shields.io/github/workflow/status/wolffshots/esp32-warm-water/codeql?label=codeql/build)
@@ -27,7 +28,7 @@ an explanation of the hardware setup will come at a later stage.
 
 ## frontend files
 
-the files in the `front/build` directory are for displaying via the webserver and are sort of a separate entity from the rest of the code. 
+the files in the `front/build` directory are for displaying via the webserver and are sort of a separate entity from the rest of the code.
 
 they automatically get made into an image but don't seem to flash with the vscode extension buttons (as a result you may need to run `idf.py -p PORT flash` for changes to persist).
 
@@ -80,7 +81,6 @@ below is short explanation of remaining files in the project folder.
 
 for more information on structure and contents of esp-idf projects, please refer to Section [Build System](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/build-system.html) of the esp-idf programming guide.
 
-
 ## documentation
 
 automatically generated API documentation (doxygen) is available [here](https://wolffshots.github.io/esp32-warm-water/index.html).
@@ -107,7 +107,7 @@ the code in this project is licensed under the MIT license - see [LICENSE](LICEN
 - thanks to [Shirkybooi](https://github.com/ShirkyBooi) for pushing me to use esp-idf
 - last but not least, thanks to [Grabt234](https://github.com/grabt234) for helping me get into this field
 - "1-Wire" is a registered trademark of Maxim Integrated.
-- [brian-lough](https://www.hackster.io/brian-lough) for [this](https://www.hackster.io/brian-lough/3-simple-ways-of-programming-an-esp8266-12x-module-c514ee) simple but helpful post 
+- [brian-lough](https://www.hackster.io/brian-lough) for [this](https://www.hackster.io/brian-lough/3-simple-ways-of-programming-an-esp8266-12x-module-c514ee) simple but helpful post and linked to [this](https://github.com/espressif/esptool/wiki/ESP32-Boot-Mode-Selection) for boot mode selection
 
 # todo
 
@@ -121,6 +121,5 @@ the code in this project is licensed under the MIT license - see [LICENSE](LICEN
 - [x] margins for goal temp
 - [x] spiffs!
 - [x] webserver/url handling - https://github.com/espressif/esp-idf/tree/master/examples/protocols/http_server/file_serving
-- [ ] component unit testing - https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/unit-tests.html
 - [x] implement build testing - https://calinradoni.github.io/pages/200203-travisci-esp-idf.html
 - [x] make frontend into own git module

@@ -3,15 +3,16 @@
 /** set up the led as an output */
 void led_init(void)
 {
-    gpio_output(CONFIG_ESP_BUILTIN_LED);
+    gpio_output(CONFIG_STATUS_ONE_PIN);
+    gpio_output(CONFIG_STATUS_TWO_PIN);
 }
-/** turn the led on (gpio low) */
-void led_on(void)
+/** turn the led on */
+void led_on(int pin)
 {
-    gpio_set_level(CONFIG_ESP_BUILTIN_LED, 0);
+    gpio_set_level(pin, 1);
 }
-/** turn the led off (gpio high) */
-void led_off(void)
+/** turn the led off */
+void led_off(int pin)
 {
-    gpio_set_level(CONFIG_ESP_BUILTIN_LED, 1);
+    gpio_set_level(pin, 0);
 }
