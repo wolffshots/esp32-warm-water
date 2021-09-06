@@ -90,8 +90,9 @@ jobs:
             ./install.sh > /dev/null
     - name: Build esp-idf Code - build warm-water
       run:  . /home/runner/work/esp32-warm-water/esp/esp-idf/export.sh &&
+            cd /home/runner/work/esp32-warm-water/esp32-warm-water/front && 
+            npm install -g pnpm && pnpm install && pnpm build && 
             cd /home/runner/work/esp32-warm-water/esp32-warm-water/ &&
-            cd front && npm install -g pnpm && pnpm install && pnpm build && cd .. &&
             idf.py reconfigure &&
             idf.py app
     - name: Build esp-idf Code - after success
