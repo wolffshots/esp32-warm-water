@@ -88,10 +88,13 @@ jobs:
             git clone -b v4.3 --recursive https://github.com/espressif/esp-idf.git &&
             cd esp-idf &&
             ./install.sh > /dev/null
+    - name: Buid frontend files
+      run:  cd /home/runner/work/esp32-warm-water/esp32-warm-water/front && 
+            npm install -g pnpm && 
+            pnpm install && 
+            pnpm build
     - name: Build esp-idf Code - build warm-water
-      run:  . /home/runner/work/esp32-warm-water/esp/esp-idf/export.sh &&
-            cd /home/runner/work/esp32-warm-water/esp32-warm-water/front && 
-            npm install -g pnpm && pnpm install && pnpm build && 
+      run:  . /home/runner/work/esp32-warm-water/esp/esp-idf/export.sh &&             
             cd /home/runner/work/esp32-warm-water/esp32-warm-water/ &&
             idf.py reconfigure &&
             idf.py app
