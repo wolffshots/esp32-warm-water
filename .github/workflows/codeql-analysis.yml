@@ -17,7 +17,7 @@ on:
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ main ]
-  schedule:
+#   schedule:
     #        ┌───────────── minute (0 - 59)
     #        │  ┌───────────── hour (0 - 23)
     #        │  │ ┌───────────── day of the month (1 - 31)
@@ -27,7 +27,7 @@ on:
     #        │  │ │ │ │
     #        │  │ │ │ │
     #        *  * * * *
-    - cron: '0 0 */2 * *'
+#     - cron: '0 0 */2 * *'
 
 jobs:
   analyze:
